@@ -1,0 +1,150 @@
+/********************************************/
+/*          Auth Pages Styling              */
+/********************************************/
+
+:root {
+  --input-padding-x: 1.5rem;
+  --input-padding-y: 0.75rem;
+  --font-color: #fff;
+  --font-color-secondary: #272727;
+  --font-face-primary: "Mark for Ebiquity W05 Regular";
+  --font-face-secondary: "Roboto";
+}
+
+@font-face {
+  font-family: "Mark for Ebiquity W05 Bold";
+  src: url("../fonts/Mark\ for\ Ebiquity\ W05\ Bold.svg") format("svg"),
+    url("../fonts/Mark\ for\ Ebiquity\ W05\ Bold.ttf") format("truetype"),
+    url("../fonts/Mark\ for\ Ebiquity\ W05\ Bold.woff") format("woff"),
+    url("../fonts/Mark\ for\ Ebiquity\ W05\ Bold.woff2") format("woff2"),
+    url("../fonts/Mark\ for\ Ebiquity\ W05\ Bold.eot")
+      format("embedded-opentype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+.bd-admin {
+  background-color: #303030;
+  opacity: 1;
+  background-image: radial-gradient(circle at center center, #1b1b1b, #303030),
+    repeating-radial-gradient(
+      circle at center center,
+      #1b1b1b,
+      #1b1b1b,
+      29px,
+      transparent 58px,
+      transparent 29px
+    );
+  background-blend-mode: multiply;
+}
+
+.bd-staff {
+  background-color: #303030;
+  opacity: 1;
+  background-image: repeating-radial-gradient(
+      circle at 0 0,
+      transparent 0,
+      #303030 29px
+    ),
+    repeating-linear-gradient(#1b1b1b55, #1b1b1b);
+}
+
+.bd-users {
+  background-color: #303030;
+  opacity: 1;
+  background-image: linear-gradient(
+      30deg,
+      #1b1b1b 12%,
+      transparent 12.5%,
+      transparent 87%,
+      #1b1b1b 87.5%,
+      #1b1b1b
+    ),
+    linear-gradient(
+      150deg,
+      #1b1b1b 12%,
+      transparent 12.5%,
+      transparent 87%,
+      #1b1b1b 87.5%,
+      #1b1b1b
+    ),
+    linear-gradient(
+      30deg,
+      #1b1b1b 12%,
+      transparent 12.5%,
+      transparent 87%,
+      #1b1b1b 87.5%,
+      #1b1b1b
+    ),
+    linear-gradient(
+      150deg,
+      #1b1b1b 12%,
+      transparent 12.5%,
+      transparent 87%,
+      #1b1b1b 87.5%,
+      #1b1b1b
+    ),
+    linear-gradient(
+      60deg,
+      #1b1b1b77 25%,
+      transparent 25.5%,
+      transparent 75%,
+      #1b1b1b77 75%,
+      #1b1b1b77
+    ),
+    linear-gradient(
+      60deg,
+      #1b1b1b77 25%,
+      transparent 25.5%,
+      transparent 75%,
+      #1b1b1b77 75%,
+      #1b1b1b77
+    );
+  background-size: 58px 102px;
+  background-position: 0 0, 0 0, 29px 51px, 29px 51px, 0 0, 29px 51px;
+}
+
+body {
+  color: var(--font-color);
+}
+
+h1 {
+  font-family: "Mark for Ebiquity W05 Bold";
+  font-size: 3.805676093570752rem;
+  font-weight: 700;
+  line-height: 100%;
+  letter-spacing: 0.01em;
+  text-transform: uppercase;
+  color: var(--font-color);
+}
+
+h2 {
+  font-family: "Mark for Ebiquity W05 Bold";
+  font-size: 2rem;
+  font-weight: 700;
+  line-height: 100%;
+  letter-spacing: 0.01em;
+  text-transform: uppercase;
+  color: var(--font-color);
+}
+
+p {
+  font-family: var(--font-face-secondary);
+}
+
+a {
+  color: var(--font-color-secondary);
+}
+
+.Title-bottom {
+  bottom: 10rem;
+}
+
+.flash-message {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 9999;
+  display: none;
+}
