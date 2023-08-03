@@ -46,6 +46,38 @@
   font-display: swap;
 }
 
+@font-face {
+  font-family: "Helvetica Neue";
+  src: url("../fonts/HelveticaNeue\ Light.ttf") format("ttf");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Helvetica Neue";
+  src: url("../fonts/HelveticaNeue\ Medium.ttf") format("ttf");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Helvetica Neue";
+  src: url("../fonts/HelveticaNeue\ Bold.ttf") format("ttf");
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Helvetica Neue";
+  src: url("../fonts/HelveticaNeue.ttf") format("ttf");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
 ::root {
   --font-color: #ffff;
   --font-family-1: "RodinBokutohPro-B";
@@ -196,20 +228,20 @@ a {
 /* Gallery */
 
 .panel:nth-child(1) {
-  background-image: url("../images/doctor4.jpg");
+  background-image: url("../images/galery1.jpg");
 }
 .panel:nth-child(2) {
-  background-image: url("../images/doctor2.jpg");
+  background-image: url("../images/galery2.jpg");
 }
 .panel:nth-child(3) {
-  background-image: url("../images/doctor3.jpg");
+  background-image: url("../images/galery3.jpg");
 }
 .panel:nth-child(4) {
-  background-image: url("../images/doctor.jpg");
+  background-image: url("../images/galery4.jpg");
 }
 
 .panel:nth-child(5) {
-  background-image: url("../images/doctor4.jpg");
+  background-image: url("../images/galery5.jpg");
 }
 
 .panel:nth-child(6) {

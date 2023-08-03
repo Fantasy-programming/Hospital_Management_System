@@ -1,17 +1,18 @@
 <?php
 session_start();
 
-// Check if the user is authenticated, if not, redirect to the login page
-if (!isset($_SESSION['user_id'])) {
-    header("Location: ../../Users/user_login.php");
-    exit();
-}
+// // Check if the user is authenticated, if not, redirect to the login page
+// if (!isset($_SESSION['user_id'])) {
+//     header("Location: ../../Users/user_login.php");
+//     exit();
+// }
 
-// Check if the user's role is patient, if not, redirect to the home screen
-if ($_SESSION['role'] !== 'Doctor') {
-    header("Location: ../../index.php");
-    exit();
-}
+// // Check if the user's role is patient, if not, redirect to the home screen
+// if ($_SESSION['role'] !== 'Doctor') {
+//     header("Location: ../../index.php");
+//     exit();
+// }
+// 
 ?>
 
 <!DOCTYPE html>

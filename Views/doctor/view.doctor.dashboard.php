@@ -1,9 +1,9 @@
-<?php require('../partials/doctor.head.php') ?>
-<?php require('../partials/doctor.nav.php') ?>
-<?php require('../partials/doctor.header.php') ?>
+<?php require('Views/partials/doctor.head.php') ?>
+<?php require('Views/partials/doctor.nav.php') ?>
+<?php require('Views/partials/doctor.header.php') ?>
 <main class="container-fluid px-5">
     <div class="row">
-        <?php require('../partials/doctor.sidebar.php') ?>
+        <?php require('Views/partials/doctor.sidebar.php') ?>
         <section class="content col-9">
             <section class="panel">
                 <section id="calendar">
@@ -24,4 +24,4 @@
         </section>
     </div>
 </main>
-<?php require('../partials/doctor.footer.php') ?>
+<?php require('Views/partials/doctor.footer.php') ?>

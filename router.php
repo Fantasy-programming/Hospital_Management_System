@@ -6,6 +6,7 @@ $routes = [
     '/login' => 'controllers/user.login.php',
     '/signup' => 'controllers/user.signup.php',
     '/logout' => 'controllers/logout.php',
+    '/test' => 'controllers/doctor.dashboard.php'
 ];
 
 function routeToController($url, $routes)

@@ -1,2 +1,2 @@
 <?php
-require_once 'Users/user_register.php';
+require_once 'Views/auth/view.user.register.php';

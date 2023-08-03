@@ -173,7 +173,7 @@
       </div>
     </div>
   </section>
-  <section id="services" class="alignment space-mid">
+  <section id="gallery" class="alignment space-mid">
     <div class="container-fluid">
       <div class="row mb-5">
         <div class="col-md-2">
@@ -221,15 +221,87 @@
             <h3>CSS Script</h3>
           </div>
         </div>
+      </div>
+    </div>
+  </section>
+  <section id="services" class="alignment space-mid">
+    <div class="container-fluid">
+      <div class="row mb-5">
+        <div class="col-md-2">
+          <h2 class="fs-5">Services</h2>
+        </div>
+        <div class="col-md-5">
+          <div class="d-flex flex-column">
+            <h2 class="fs-2 lh-sm pb-4">Excellent services of our Hospital</h2>
+            <div class="d-flex flex-row flex-wrap">
+              <a href="#" class="btn btn-primary rounded-pill me-2 mb-2 px-5">All</a>
+              <a href="#" class="btn btn-outline-dark rounded-pill me-2 mb-2">For adults</a>
+              <a href="#" class="btn btn-outline-dark rounded-pill me-2 mb-2">For children</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-5">
+          <div class="d-flex">
+            <a class="">TE</a>
+            <a class="">Tw</a>
+            <a class="">FB</a>
+            <a class="">WA</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section id="contactUs" class="alignment color-second text-white">
+    <div class="container-fluid">
+      <div class="row mb-5">
+        <div class="col-md-2">
+          <h2 class="fs-5">Logo</h2>
+        </div>
+        <div class="col-md-5">
+          <h2 class="fs-2 lh-sm pb-4">Make an appointment with a doctor</h2>
+        </div>
+        <div class="col-md-5">
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-2">
+          emtpy
+        </div>
+        <div class="col-md-10">
+          <form>
+            form here
+          </form>
+        </div>
+      </div>
+    </div>
+
+  </section>
+  <section id="faq" class="alignment">
+    <div class="container-fluid">
+      <div class="row mb-5">
+        <div class="col-md-2">
+          <h2 class="fs-5">FAQ</h2>
+        </div>
+        <div class="col-md-5">
+          <h2 class="fs-2 lh-sm pb-4">Questions from our clients</h2>
+        </div>
+        <div class="col-md-5">
+        </div>
+      </div>
+      <div class="row">
 
       </div>
     </div>
   </section>
-  <section id="contact" class="alignment">
-  </section>
-  <section id="faq" class="alignment">
-  </section>
-  <footer class="alignment">
+  <footer class="alignment color-second text-white">
+    <div class="footer-top">
+
+    </div>
+    <hr>
+    <div class="footer-bottom">
+
+    </div>
+
   </footer>
 
 

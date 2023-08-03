@@ -3,7 +3,7 @@
 // show page if get request
 
 if ($_SERVER['REQUEST_METHOD'] === 'GET') {
-    require_once 'Users/user_login.php';
+    require_once 'Views/auth/view.user.login.php';
     exit();
 }
 
@@ -54,7 +54,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $_SESSION['role'] = $user['role'];
 
             // Redirect to the secure area after successful login
-            header("Location: ../Views/patient/secure.php");
+            header("Location: /Views/patient/view.patient.dashboard.php");
             exit();
         } else {
             // Incorrect password, redirect back to the login page with an error message
