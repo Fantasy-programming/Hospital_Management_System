@@ -24,7 +24,7 @@ if ($_SESSION['role'] !== 'patient') {
     <h2>Welcome, <?php echo $_SESSION['username']; ?>!</h2>
     <h2>Your role is <?php echo $_SESSION['role']; ?></h2>
     <p>This is a secure area.</p>
-    <p><a href="../../utilities/logout.php">Logout</a></p>
+    <p><a href="/logout">Logout</a></p>
 </body>
 
 </html>

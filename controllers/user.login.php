@@ -13,9 +13,8 @@ session_start();
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
-    $username = $_POST['userName'];
+    $email = $_POST['email'];
     $password = $_POST['password'];
-
 
     $host = "localhost";
     $dbUsername = "root";
@@ -33,11 +32,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
 
     // Prepare a SQL query to retrieve the user's data based on the provided username
-    $query = "SELECT id, username, password, role FROM patients WHERE username = ? LIMIT 1";
+    $query = "SELECT id, email, first_name, last_name, password, role FROM patients WHERE email = ? LIMIT 1";
 
     // Use prepared statements to prevent SQL injection
     $stmt = $connection->prepare($query);
-    $stmt->bind_param("s", $username);
+    $stmt->bind_param("s", $email);
     $stmt->execute();
     $result = $stmt->get_result();
 
@@ -50,7 +49,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         if (password_verify($password, $user['password'])) {
             // Password is correct, user is authenticated
             $_SESSION['user_id'] = $user['id'];
-            $_SESSION['username'] = $user['username'];
+            $_SESSION['username'] = $user['first_name'] . " " . $user['last_name'];
             $_SESSION['role'] = $user['role'];
 
             // Redirect to the secure area after successful login

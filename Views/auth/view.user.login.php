@@ -42,8 +42,8 @@ $error = isset($_GET['error']) ? $_GET['error'] : null;
             <form action="/login" method="post">
               <input type="hidden" name="role" value="patient">
               <div class="form-group pb-3">
-                <label>Username</label>
-                <input type="text" name="userName" class="form-control" value="">
+                <label>Email</label>
+                <input type="email" name="email" class="form-control" value="">
                 <span class=""></span>
               </div>
               <div class="form-group pb-5">

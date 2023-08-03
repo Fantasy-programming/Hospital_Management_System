@@ -11,9 +11,9 @@
 
 <body>
   <header id="hero" class="position-relative alignment">
-    <video poster="https://s3-us-west-2.amazonaws.com/s.cdpn.io/4273/polina.jpg" id="bgvid" playsinline autoplay muted loop class="position-absolute top-0 start-0 w-100 h-100">
+    <video id="bgvid" playsinline autoplay muted loop class="position-absolute top-0 start-0 w-100 h-100">
       <source src="assets/video/header.mp4" type="video/webm">
-      <source src="http://thenewcode.com/assets/videos/polina.mp4" type="video/mp4">
+      <source src="assets/video/header.mp4" type="video/mp4">
 
     </video>
     <nav class="container-fluid d-flex justify-content-center py-3 ">

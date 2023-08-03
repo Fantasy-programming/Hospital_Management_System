@@ -38,7 +38,7 @@ $error = isset($_GET['error']) ? $_GET['error'] : null;
                     <div class="card-body">
                         <h3 class="card-title text-center fw-bold">Signup</h3>
                         <p class="card-text text-center pb-3">Please fill in your credentials to signup.</p>
-                        <form method="post" action="signup_process.php">
+                        <form method="post" action="/signup">
                             <input type="hidden" name="role" value="patient">
                             <div class="form-group pb-2">
                                 <label>First Name</label>
@@ -51,8 +51,8 @@ $error = isset($_GET['error']) ? $_GET['error'] : null;
                                 <span class=""></span>
                             </div>
                             <div class="form-group pb-3">
-                                <label>Username</label>
-                                <input type="text" name="userName" class="form-control" value="">
+                                <label>Email</label>
+                                <input type="email" name="email" class="form-control" value="">
                                 <span class=""></span>
                             </div>
                             <div class="form-group pb-3">
