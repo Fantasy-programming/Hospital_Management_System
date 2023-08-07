@@ -3,10 +3,6 @@ if (isset($_SESSION['user_id'])) {
 }
 ?>
 
-<?php
-$error = isset($_GET['error']) ? $_GET['error'] : null;
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -80,12 +76,10 @@ $error = isset($_GET['error']) ? $_GET['error'] : null;
             </div>
         </div>
     </main>
-    <?php
-
-    if ($error) {
-        echo '<div class="flash-message alert alert-danger" role="alert">';
-        echo $error;
-        echo '</div>';
+    <?php if (isset($errors)) {
+        foreach ($errors as $error) {
+            echo "<div class='alert alert-danger flash-message' role='alert'>$error</div>";
+        }
     }
     ?>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
