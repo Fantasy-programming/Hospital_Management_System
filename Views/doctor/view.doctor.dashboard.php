@@ -6,7 +6,7 @@
 
 
 <!--Container Main start-->
-<div class="height-100 bg-lig">
+<main class="height-100 bg-lig">
     <div class="container-fluid">
         <div class="row">
             <div class="col-md-8">
@@ -159,14 +159,13 @@
                             </div>
                         </div>
                     </div>
-                </div>G
+                </div>
             </div>
         </div>
     </div>
 
-</div>
+</main>
 <!--Container Main end-->
-G
 
 
 <?php require base_path('Views/partials/doctor.footer.php') ?>
