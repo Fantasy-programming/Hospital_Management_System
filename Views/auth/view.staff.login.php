@@ -1,9 +1,4 @@
 <?php
-if (isset($_SESSION['user_id'])) {
-}
-?>
-
-<?php
 $error = isset($_GET['error']) ? $_GET['error'] : null;
 ?>
 
@@ -35,7 +30,7 @@ $error = isset($_GET['error']) ? $_GET['error'] : null;
           <div class="card-body">
             <h3 class="card-title text-center fw-bold">Login</h3>
             <p class="card-text text-center pb-3">Please fill in your credentials to login.</p>
-            <form action="staff_login_process.php" method="post">
+            <form method="post">
               <div class="form-group pb-3">
                 <label>Username</label>
                 <input type="text" name="userName" class="form-control" value="">
@@ -59,7 +54,7 @@ $error = isset($_GET['error']) ? $_GET['error'] : null;
               <div class="form-group text-center pb-4">
                 <input type="submit" class="btn p-4 rounded-4 btn-outline-dark" value="Login">
               </div>
-              <p class="card-text text-center pb-2">New employee? <a href="staff_register.php">Sign up now</a>.</p>
+              <p class="card-text text-center pb-2">New employee? <a href="/staff/signup">Sign up now</a>.</p>
             </form>
           </div>
         </div>

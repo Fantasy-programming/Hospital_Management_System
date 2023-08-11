@@ -1,8 +1,3 @@
-<?php
-if (isset($_SESSION['user_id'])) {
-}
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -34,7 +29,7 @@ if (isset($_SESSION['user_id'])) {
                     <div class="card-body">
                         <h3 class="card-title text-center fw-bold">Signup</h3>
                         <p class="card-text text-center pb-3">Please fill in your credentials to signup.</p>
-                        <form method="post" action="/signup">
+                        <form method="post">
                             <input type="hidden" name="role" value="patient">
                             <div class="form-group pb-2">
                                 <label>First Name</label>

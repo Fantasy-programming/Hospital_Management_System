@@ -182,6 +182,7 @@ a {
   height: 60px;
   width: 33%;
 }
+
 .appointment-pics span {
   height: 60px;
   width: 60px;
@@ -218,6 +219,19 @@ a {
   background-color: #ccc;
   border: 3px solid #fff;
   z-index: 100;
+}
+
+.card-body .request-element .appointment-pics {
+  height: 60px;
+}
+
+.card-body .request-element .appointment-pics span {
+  height: 60px;
+  width: 60px;
+}
+
+.request-element {
+  background-color: #f8f8fb;
 }
 
 .appointment-list {

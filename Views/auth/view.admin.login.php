@@ -1,9 +1,4 @@
 <?php
-if (isset($_SESSION['user_id'])) {
-}
-?>
-
-<?php
 $error = isset($_GET['error']) ? $_GET['error'] : null;
 ?>
 
@@ -35,7 +30,7 @@ $error = isset($_GET['error']) ? $_GET['error'] : null;
           <div class="card-body">
             <h3 class="card-title text-center fw-bold">Login</h3>
             <p class="card-text text-center pb-3">Please fill in your credentials to login.</p>
-            <form action="admin_login_process.php" method="post">
+            <form method="post">
               <input type="hidden" name="role" value="admin">
               <div class="form-group pb-3">
                 <label>Username</label>

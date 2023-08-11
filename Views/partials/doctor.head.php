@@ -22,6 +22,7 @@ session_start();
     <!-- js files -->
 
     <script src="/assets/modules/fullcalendar/dist/index.global.min.js"></script>
+    <link href="https://cdn.datatables.net/v/dt/dt-1.13.6/datatables.min.css" rel="stylesheet">
 
 
 

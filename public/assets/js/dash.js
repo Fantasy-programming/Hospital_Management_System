@@ -35,3 +35,31 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
   // Your code to run since DOM is loaded and ready
 });
+
+// Navbar
+
+function updateDateTime() {
+  const currentDateTime = new Date();
+
+  const dateOptions = { day: "numeric", month: "long" };
+  const formattedDate = currentDateTime.toLocaleDateString(
+    "en-US",
+    dateOptions
+  );
+  const dateContainer = document.getElementById("date-container");
+  dateContainer.textContent = `Today, ${formattedDate}`;
+
+  const timeOptions = { hour: "2-digit", minute: "2-digit", hour12: true };
+  const formattedTime = currentDateTime.toLocaleTimeString(
+    "en-US",
+    timeOptions
+  );
+  const timeContainer = document.getElementById("time-container");
+  timeContainer.textContent = formattedTime;
+}
+
+// Initial call to update both date and time
+updateDateTime();
+
+// Auto-update every minute
+setInterval(updateDateTime, 60000);

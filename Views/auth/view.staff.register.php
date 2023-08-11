@@ -1,9 +1,4 @@
 <?php
-if (isset($_SESSION['user_id'])) {
-}
-?>
-
-<?php
 $error = isset($_GET['error']) ? $_GET['error'] : null;
 ?>
 
@@ -35,7 +30,7 @@ $error = isset($_GET['error']) ? $_GET['error'] : null;
                     <div class="card-body">
                         <h3 class="card-title text-center fw-bold">Signup</h3>
                         <p class="card-text text-center pb-3">Please fill in your credentials to signup.</p>
-                        <form method="post" action="staff_signup_process.php">
+                        <form method="post">
                             <div class="form-group pb-2">
                                 <label>First Name</label>
                                 <input type="text" name="firstName" class="form-control" value="">
@@ -44,6 +39,11 @@ $error = isset($_GET['error']) ? $_GET['error'] : null;
                             <div class="form-group pb-3">
                                 <label>Last Name</label>
                                 <input type="text" name="lastName" class="form-control" value="">
+                                <span class=""></span>
+                            </div>
+                            <div class="form-group pb-3">
+                                <label>Email</label>
+                                <input type="email" name="email" class="form-control" value="">
                                 <span class=""></span>
                             </div>
                             <div class="form-group pb-3">
@@ -84,7 +84,7 @@ $error = isset($_GET['error']) ? $_GET['error'] : null;
                             <div class="form-group text-center pb-4">
                                 <input type="submit" class="btn p-4 rounded-4 btn-outline-dark" value="Sign Up">
                             </div>
-                            <p class="card-text text-center pb-2">Part of the team? <a href="staff_login.php">Go to Log in</a>.</p>
+                            <p class="card-text text-center pb-2">Part of the team? <a href="/staff/login">Go to Log in</a>.</p>
                         </form>
                     </div>
                 </div>
