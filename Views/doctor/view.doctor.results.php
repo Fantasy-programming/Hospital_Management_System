@@ -44,7 +44,7 @@
                 </div>
             </div>
             <div class="col-md-8">
-                <table id="myTable">
+                <table id="myTable" class="table table-bordered table-striped table-hover align-middle w-100">
                     <thead>
                         <tr>
                             <th class="sortable">First Name</th>

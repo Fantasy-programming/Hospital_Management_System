@@ -5,12 +5,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="assets/index.css">
+    <link rel="stylesheet" href="/assets/index.css">
 </head>
 
 <body>
-
-
     <div id="error">
         <div class="container text-center">
             <div class="pt-8">

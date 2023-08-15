@@ -5,7 +5,8 @@
 <main class="height-100 bg-lig">
 <div class="container-fluid">
     <div class="row">
-        
+        <h1>Create Prescriptions</h1>
+        <h1>Create operation reports</h1>
     </div>
 </div>
 

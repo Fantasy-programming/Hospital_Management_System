@@ -1,5 +1,8 @@
 <?php
 session_start();
+
+// check for authorization
+authorized($_SESSION['role'] === 'Doctor' and isset($_SESSION['user_id']));
 ?>
 
 <!DOCTYPE html>

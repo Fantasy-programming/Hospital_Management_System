@@ -1,17 +1,8 @@
 <?php
 session_start();
 
-// Check if the user is authenticated, if not, redirect to the login page
-if (!isset($_SESSION['user_id'])) {
-    header("Location: /login");
-    exit();
-}
-
-// Check if the user's role is patient, if not, redirect to the home screen
-if ($_SESSION['role'] !== 'admin') {
-    header("Location: /");
-    exit();
-}
+// check for authorization
+authorized($_SESSION['role'] === 'admin' and isset($_SESSION['user_id']));
 ?>
 
 <!DOCTYPE html>
