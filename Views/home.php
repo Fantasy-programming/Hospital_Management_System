@@ -4,10 +4,10 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-  <link rel="stylesheet" href="assets/index.css">
-  <link rel="stylesheet" href="assets/css/home.css">
-  <!-- <link rel="stylesheet" href="assets/css/isolde.min.css"> -->
+  <title>Turing Hospital</title>
+  <?php globalcss() ?>
+  <?php loadcss("home") ?>
+  <?php loadjs("home") ?>
 </head>
 
 <body>
@@ -750,9 +750,5 @@
       </div>
     </div>
   </footer>
-
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
-  <script type="module" src="assets/js/home.js"></script>
 </body>
-
 </html>

@@ -1,2 +1,5 @@
 <?php
-view('auth/view.user.register');
+view('auth/view.user.register', [
+    'title' => 'Signup',
+    'bg' => 'bd-users'
+]);

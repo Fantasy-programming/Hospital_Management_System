@@ -1,8 +1,6 @@
-<?php require base_path('Views/partials/doctor.head.php') ?>
-
-<?php require base_path('Views/partials/doctor.header.php') ?>
-
-<?php require base_path('Views/partials/doctor.nav.php') ?>
+<?php require base_path('Views/partials/DR/head.php') ?>
+<?php require base_path('Views/partials/DR/header.php') ?>
+<?php require base_path('Views/partials/DR/nav.php') ?>
 <main class="height-100 bg-lig">
     <div class="container-fluid py-4">
         <div class="row mb-4">
@@ -19,4 +17,4 @@
     </div>
     </div>
 </main>
-<?php require base_path('Views/partials/doctor.footer.php') ?>
+<?php require base_path('Views/partials/DR/footer.php') ?>

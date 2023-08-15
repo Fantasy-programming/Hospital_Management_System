@@ -1,2 +1,2 @@
 <?php
-view('doctor\view.doctor.requests');
+view('doctor\requests.view');

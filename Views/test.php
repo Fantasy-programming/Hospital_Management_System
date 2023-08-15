@@ -19,9 +19,6 @@
 
     <!-- datatables CSS-->
     <link rel="stylesheet" href="/assets/modules/DataTables/datatables.min.css">
-
-    <!-- js files -->
-    <!-- <link href="https://cdn.datatables.net/v/dt/dt-1.13.6/datatables.min.css" rel="stylesheet"> -->
 </head>
 
 <body>

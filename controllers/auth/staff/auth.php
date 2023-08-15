@@ -14,7 +14,7 @@ $params = [
     'role' => $_POST['role']
 ];
 
-$user = $db->query($query, $params)->find();
+$user = $db->query($query, $params)->findorfail();
 
 
 if ($user) {

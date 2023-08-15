@@ -1,8 +1,7 @@
 <?php
+session_start();
 
 use Core\Response;
-
-session_start();
 
 if (!isset($_SESSION['user_id'])) {
     view(Response::FORBIDDEN);
@@ -10,7 +9,7 @@ if (!isset($_SESSION['user_id'])) {
 }
 
 // check for authorization
-authorized($_SESSION['role'] === 'Accountant' and isset($_SESSION['user_id']));
+authorized($_SESSION['role'] === 'Doctor' and isset($_SESSION['user_id']));
 ?>
 
 <!DOCTYPE html>
@@ -19,13 +18,14 @@ authorized($_SESSION['role'] === 'Accountant' and isset($_SESSION['user_id']));
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> <?= $title ?> </title>
+    <title>Doctor Dasboard</title>
     <?php globalcss() ?>
-    <?php loadcss('acct') ?>
-    <?php loadjs('sort') ?>
+    <?php loadcss('dash') ?>
     <?php loadjs('dash') ?>
-    <?= urlIs('/doctor/appointments') ? loadjs('calendar') : "" ?>
 
+    <!-- js files -->
+    <script src="/assets/modules/fullcalendar/dist/index.global.min.js"></script>
+    <link href="https://cdn.datatables.net/v/dt/dt-1.13.6/datatables.min.css" rel="stylesheet">
 </head>
 
 <body id="body-pd" class="bg-lig">

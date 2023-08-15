@@ -1,2 +1,5 @@
 <?php
-view('auth/view.user.login');
+view('auth/view.user.login', [
+    'title' => 'Login',
+    'bg' => 'bd-users'
+]);

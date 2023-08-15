@@ -1,2 +1,2 @@
 <?php
-view('doctor\view.doctor.settings');
+view('doctor\settings.view');

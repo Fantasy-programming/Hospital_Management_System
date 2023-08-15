@@ -1,3 +1,3 @@
 <?php
 
-view('doctor\view.doctor.appointments');
+view('doctor\appointments.view');

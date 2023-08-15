@@ -1,2 +1,2 @@
 <?php
-view('doctor\view.doctor.dashboard');
+view('doctor\dashboard.view');

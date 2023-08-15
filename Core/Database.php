@@ -19,7 +19,6 @@ class Database
             $dsn = "mysql:" . http_build_query($config, '', ';');
             $this->connection = new PDO($dsn, $user, $password, [
                 PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,
-                PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION
             ]);
         } catch (PDOException $e) {
             throw new Exception("Database connection failed: " . $e->getMessage());
@@ -30,8 +29,8 @@ class Database
         try {
 
             $this->statement = $this->connection->prepare($query);
-            $success = $this->statement->execute($params);
-            return $success ? 1 : 0;
+            $this->statement->execute($params);
+            return $this;
         } catch (PDOException $e) {
             return 0;
         }

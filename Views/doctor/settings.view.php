@@ -1,8 +1,6 @@
-<?php require base_path('Views/partials/doctor.head.php') ?>
-
-<?php require base_path('Views/partials/doctor.header.php') ?>
-
-<?php require base_path('Views/partials/doctor.nav.php') ?>
+<?php require base_path('Views/partials/DR/head.php') ?>
+<?php require base_path('Views/partials/DR/header.php') ?>
+<?php require base_path('Views/partials/DR/nav.php') ?>
 <main class="heigh-100">
     <div class="container rounded bg-white mt-5 mb-5">
         <div class="row">
@@ -94,4 +92,4 @@
     </div>
 
 </main>
-<?php require base_path('Views/partials/doctor.footer.php') ?>
+<?php require base_path('Views/partials/DR/footer.php') ?>

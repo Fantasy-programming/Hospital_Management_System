@@ -39,3 +39,27 @@ function abort($code = 404)
     view($code);
     die();
 }
+
+
+// Helpers for assets
+
+function globalcss()
+{
+    echo '
+    <link rel="stylesheet" href="/assets/index.css">
+    <link rel="stylesheet" href="/assets/modules/fontawesome6.1.1/css/all.css">
+    <link rel="stylesheet" href="/assets/modules/boxicons/css/boxicons.min.css">
+    <script src="/assets/modules/bootstrap-5.1.3/js/bootstrap.bundle.min.js" defer></script>
+
+    ';
+}
+
+function loadcss($name)
+{
+    echo '<link rel="stylesheet" href="/assets/css/' . $name . '.css">';
+}
+
+function loadjs($name)
+{
+    echo '<script type="module" src="/assets/js/' . $name . '.js" defer></script>';
+}

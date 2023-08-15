@@ -54,10 +54,10 @@ class Router
         $this->abort();
     }
 
-    protected function abort($code = 404)
+    protected function abort($code = Response::NOT_FOUND)
     {
-        http_response_code($code);
-        view($code);
+        http_response_code($code['code']);
+        view("error", $code);
         die();
     }
 }
