@@ -1,4 +1,4 @@
 <?php
 
 // Dashboard
-$router->get('/admin/dashboard', 'controllers/admin/index.php');
+$router->get('/admin/dashboard', 'Controllers\admin\Admin', 'viewHome');

@@ -10,6 +10,7 @@ function dd($value)
     die();
 }
 
+
 function urlIs($url)
 {
     return $_SERVER['REQUEST_URI'] === $url;
@@ -22,9 +23,9 @@ function authorized($condition, $status = Response::FORBIDDEN)
     }
 }
 
-function base_path($path)
+function base_path($path = '')
 {
-    return BASE_PATH . $path;
+    return rtrim(realpath(BASE_PATH . $path), '/');
 }
 
 function view($path, $attributes = [])
@@ -33,10 +34,13 @@ function view($path, $attributes = [])
     require base_path("Views/{$path}.php");
 }
 
-function abort($code = 404)
+function abort($code = Response::NOT_FOUND)
 {
-    http_response_code($code);
-    view($code);
+    http_response_code($code['code']);
+    view('error', [
+        'code' => $code['code'],
+        'message' => $code['message']
+    ]);
     die();
 }
 

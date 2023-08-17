@@ -1,13 +1,13 @@
 <?php
 
 // Dashboard
-$router->get('/pharmacist/dashboard', 'controllers/pharma/index.php');
-$router->get('/pharmacist/requests', 'controllers/pharma/requests.php');
+$router->get('/pharmacist/dashboard', 'Controllers\pharma\Pharmacist', 'viewHome');
+$router->get('/pharmacist/requests', 'Controllers\pharma\Pharmacist', 'viewRequests');
 
-$router->get('/pharmacist/medicines', 'controllers/pharma/medicines.php');
-$router->put('/pharmacist/medicines', 'controllers/pharma/update.php');
-$router->post('/pharmacist/medicines', 'controllers/pharma/store.php');
-$router->delete('/pharmacist/medicines', 'controllers/pharma/destroy.php');
+$router->get('/pharmacist/medicines', 'Controllers\pharma\Pharmacist', 'viewMedicines');
+$router->put('/pharmacist/medicines', 'Controllers\pharma\Medicines', 'update');
+$router->post('/pharmacist/medicines', 'Controllers\pharma\Medicines', 'store');
+$router->delete('/pharmacist/medicines', 'Controllers\pharma\Medicines', 'destroy');
 
-$router->get('/pharmacist/prescriptions', 'controllers/pharma/prescriptions.php');
-$router->get('/pharmacist/settings', 'controllers/pharma/settings.php');
+$router->get('/pharmacist/prescriptions', 'Controllers\pharma\Pharmacist', 'viewPrescriptions');
+$router->get('/pharmacist/settings', 'Controllers\pharma\Pharmacist', 'viewSettings');

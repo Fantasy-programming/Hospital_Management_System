@@ -1,7 +1,7 @@
 <?php
 
 // Home route
-$router->get('/', 'controllers/index.php');
+$router->get('/', 'Controllers\home', 'show');
 
 // data fetching routes
 require base_path('Routes/endpoint.php');

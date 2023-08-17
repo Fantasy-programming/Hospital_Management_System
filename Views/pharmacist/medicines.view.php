@@ -15,7 +15,7 @@
                     <div class="d-flex p-4 medicine-categories">
                         <div class="d-flex flex-column pe-4">
                             <span class="text-secondary fw-2">No of Categories</span>
-                            <span class="fw-bold fs-3 neue">202</span>
+                            <span class="fw-bold fs-3 neue" id="categoryNum">202</span>
                         </div>
                         <div class="rounded-pill p-4 bg-danger d-flex align-items-center justify-content-center text-white" style="width: 60px; height: 60px;">
                             <i class='bx bxs-capsule fs-3'></i>
@@ -26,7 +26,7 @@
                     <div class="d-flex p-4 medicine-categories">
                         <div class="d-flex flex-column pe-4">
                             <span class="text-secondary fw-2">Medicines in Store</span>
-                            <span class="fw-bold fs-3 neue">202</span>
+                            <span class="fw-bold fs-3 neue" id="medicineNum"></span>
                         </div>
                         <div class="rounded-pill p-4 bg-success d-flex align-items-center justify-content-center text-white" style="width: 60px; height: 60px;">
                             <i class='bx bxs-capsule fs-3'></i>

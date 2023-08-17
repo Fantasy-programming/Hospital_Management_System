@@ -9,16 +9,31 @@ document.addEventListener("DOMContentLoaded", function (event) {
   let insertForm = document.getElementById("insertForm");
   let createBtn = insertForm.querySelector("#createBtn"); // Use querySelector to get the element
   let updateBtn = editForm.querySelector("#UpdateBtn");
+  let categoryNum = document.getElementById("categoryNum");
+  let medicineNum = document.getElementById("medicineNum");
 
   // fetch medicines data from db
   async function fetchMedicines() {
     // use async await to fetch data
     try {
+      let totalNum = 0;
+      const totalCategory = [];
+
       const response = await fetch("/pharmacist/medicinesstore");
       const medicines = await response.json();
       medTable.clear().draw();
+
       // Loop throught the array
       medicines.forEach((medicine) => {
+        // compute the total number of medicines
+        totalNum += medicine.ammount;
+
+        // compute the total number of unique categories
+        if (!totalCategory.includes(medicine.category)) {
+          totalCategory.push(medicine.category);
+        }
+
+        // Add rows to the table
         medTable.row
           .add([
             medicine.name,
@@ -30,6 +45,12 @@ document.addEventListener("DOMContentLoaded", function (event) {
           ])
           .draw(false);
       });
+
+      // // Update the overviews
+      medicineNum.textContent = totalNum;
+      categoryNum.textContent = totalCategory.length;
+
+      // Add listeners
       Putfire();
     } catch (err) {
       console.log(err);

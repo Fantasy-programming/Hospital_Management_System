@@ -1,8 +1,8 @@
 <?php
 
 // Dashboard
-$router->get('/lab/dashboard', 'controllers/lab/index.php');
-$router->get('/lab/reports', 'controllers/lab/reports.php');
-$router->get('/lab/requests', 'controllers/lab/requests.php');
-$router->get('/lab/diagnostics', 'controllers/lab/diagnostics.php');
-$router->get('/lab/settings', 'controllers/lab/settings.php');
+$router->get('/lab/dashboard', 'Controllers\lab\Laboratory', 'viewHome');
+$router->get('/lab/reports', 'Controllers\lab\Laboratory', 'viewReports');
+$router->get('/lab/requests', 'Controllers\lab\Laboratory', 'viewRequests');
+$router->get('/lab/diagnostics', 'Controllers\lab\Laboratory', 'viewDiagnostic');
+$router->get('/lab/settings', 'Controllers\lab\Laboratory', 'viewSettings');

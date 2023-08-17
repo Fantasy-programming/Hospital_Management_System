@@ -1,20 +1,25 @@
 <?php
 
 /// Users
-$router->get('/login', 'controllers/auth/patient/login.php');
-$router->post('/login', 'controllers/auth/patient/auth.php');
-$router->get('/signup', 'controllers/auth/patient/signup.php');
-$router->post('/signup', 'controllers/auth/patient/store.php');
+$router->get('/login', 'Controllers\auth\Login', 'showUserLogin');
+$router->post('/login', 'Controllers\auth\Login', 'userLogin');
+
+$router->get('/signup', 'Controllers\auth\Signup', 'showUserSignup');
+$router->post('/signup', 'Controllers\auth\Signup', 'userStore');
 
 /// Staff
-$router->get('/staff/login', 'controllers/auth/staff/login.php');
-$router->post('/staff/login', 'controllers/auth/staff/auth.php');
-$router->get('/staff/signup', 'controllers/auth/staff/signup.php');
-$router->post('/staff/signup', 'controllers/auth/staff/store.php');
+$router->get('/staff/login', 'Controllers\auth\Login', 'showStaffLogin');
+$router->post('/staff/login', 'Controllers\auth\Login', 'staffLogin');
+
+
+$router->get('/staff/signup', 'Controllers\auth\Signup', 'showStaffSignup');
+$router->post('/staff/signup', 'Controllers\auth\Signup', 'staffStore');
+
+$router->post('/staff', 'Controllers\auth\Mutate', 'updateStaff');
 
 /// Admin
-$router->get('/admin', 'controllers/auth/admin/login.php');
-$router->post('/admin', 'controllers/auth/admin/auth.php');
+$router->get('/admin', 'Controllers\auth\Login', 'showAdminLogin');
+$router->post('/admin', 'Controllers\auth\Login', 'adminLogin');
 
 /// Logout
-$router->get('/logout', 'controllers/auth/logout.php');
+$router->get('/logout', 'Controllers\auth\Logout', 'logout');

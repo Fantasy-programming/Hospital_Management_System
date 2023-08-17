@@ -3,10 +3,7 @@ session_start();
 
 use Core\Response;
 
-if (!isset($_SESSION['user_id'])) {
-    view(Response::FORBIDDEN);
-    exit();
-}
+authorized(isset($_SESSION['user_id']));
 
 // check for authorization
 authorized($_SESSION['role'] === 'Doctor' and isset($_SESSION['user_id']));
@@ -22,6 +19,7 @@ authorized($_SESSION['role'] === 'Doctor' and isset($_SESSION['user_id']));
     <?php globalcss() ?>
     <?php loadcss('dash') ?>
     <?php loadjs('dash') ?>
+    <?php loadjs('calendar') ?>
 
     <!-- js files -->
     <script src="/assets/modules/fullcalendar/dist/index.global.min.js"></script>
