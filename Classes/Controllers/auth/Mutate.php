@@ -1,6 +1,6 @@
 <?php
 
-namespace Controllers\auth;
+namespace Classes\Controllers\auth;
 
 use Core\App;
 use Core\Database;

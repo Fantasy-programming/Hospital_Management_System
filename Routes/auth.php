@@ -1,25 +1,25 @@
 <?php
 
 /// Users
-$router->get('/login', 'Controllers\auth\Login', 'showUserLogin');
-$router->post('/login', 'Controllers\auth\Login', 'userLogin');
+$router->get('/login', 'auth\Login', 'showUserLogin')->only('guest');
+$router->post('/login', 'auth\Login', 'userLogin');
 
-$router->get('/signup', 'Controllers\auth\Signup', 'showUserSignup');
-$router->post('/signup', 'Controllers\auth\Signup', 'userStore');
+$router->get('/signup', 'auth\Signup', 'showUserSignup')->only('guest');
+$router->post('/signup', 'auth\Signup', 'userStore');
 
 /// Staff
-$router->get('/staff/login', 'Controllers\auth\Login', 'showStaffLogin');
-$router->post('/staff/login', 'Controllers\auth\Login', 'staffLogin');
+$router->get('/staff/login', 'auth\Login', 'showStaffLogin')->only('guest');
+$router->post('/staff/login', 'auth\Login', 'staffLogin');
 
 
-$router->get('/staff/signup', 'Controllers\auth\Signup', 'showStaffSignup');
-$router->post('/staff/signup', 'Controllers\auth\Signup', 'staffStore');
+$router->get('/staff/signup', 'auth\Signup', 'showStaffSignup')->only('guest');
+$router->post('/staff/signup', 'auth\Signup', 'staffStore');
 
-$router->post('/staff', 'Controllers\auth\Mutate', 'updateStaff');
+$router->post('/staff', 'auth\Mutate', 'updateStaff');
 
 /// Admin
-$router->get('/admin', 'Controllers\auth\Login', 'showAdminLogin');
-$router->post('/admin', 'Controllers\auth\Login', 'adminLogin');
+$router->get('/admin', 'auth\Login', 'showAdminLogin')->only('guest');
+$router->post('/admin', 'auth\Login', 'adminLogin');
 
 /// Logout
-$router->get('/logout', 'Controllers\auth\Logout', 'logout');
+$router->get('/logout', 'auth\Logout', 'logout');

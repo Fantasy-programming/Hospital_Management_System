@@ -3,6 +3,7 @@
 /// Requests
 
 $router->get("/staff/requests", 'Controllers\Requests', 'fetch');
+$router->get("/requests/{id}/{type}", 'Controllers\Requests', 'fetchStuff');
 
 
 /// Events - AppointmentDB - Json

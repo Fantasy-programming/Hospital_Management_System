@@ -2,6 +2,8 @@
 
 namespace Core;
 
+use Core\Middleware\Middleware;
+
 class Router
 {
 
@@ -13,35 +15,44 @@ class Router
             'url' => $url,
             'controller' => $controller,
             'action' => $action,
-            'method' => strtoupper($method)
+            'method' => strtoupper($method),
+            'middleware' => null
         ];
+        return $this;
     }
 
     public function get($url, $controller, $action)
     {
-        $this->add('GET', $url, $action, $controller);
+        return $this->add('GET', $url, $action, $controller);
     }
 
     public function post($url, $controller, $action)
     {
-        $this->add('POST', $url, $action, $controller);
+        return $this->add('POST', $url, $action, $controller);
     }
 
     public function put($url, $controller, $action)
     {
-        $this->add('PUT', $url, $action, $controller);
+        return $this->add('PUT', $url, $action, $controller);
     }
 
     public function delete($url, $controller, $action)
     {
-        $this->add('DELETE', $url,  $action, $controller);
+        return $this->add('DELETE', $url,  $action, $controller);
     }
 
     public function patch($url, $controller, $action)
     {
-        $this->add('PATCH', $url, $action, $controller);
+        return $this->add('PATCH', $url, $action, $controller);
     }
 
+    public function only($key)
+    {
+        $this->routes[array_key_last($this->routes)]['middleware'] = $key;
+    }
+
+
+    // TODO: integrate the middleware
 
     public function route($url, $method)
     {
@@ -49,11 +60,12 @@ class Router
             if ($route['method'] === $method) {
                 $params = $this->matchRoute($url, $route);
                 if ($params !== false) {
-                    
-                    
-                    $controllerClassName = $route['controller'];
+                    $controllerClassName = 'Classes\Controllers\\' . $route['controller'];
                     $controller = new $controllerClassName();
                     $action = $route['action'];
+
+                    Middleware::resolve($route['middleware']);
+
                     $controller->handle($action, $params);
                     exit();
                 }

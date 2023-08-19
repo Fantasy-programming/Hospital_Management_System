@@ -1,6 +1,6 @@
 <?php
 
-namespace Controllers\pharma;
+namespace Classes\Controllers\pharma;
 
 use Core\App;
 use Core\Database;
@@ -14,7 +14,9 @@ class Pharmacist extends \Core\Controller
 
     public function viewRequestsAction()
     {
-        $this->renderView('pharmacist\requests.view');
+        session_start();
+        $id = ["id" => $_SESSION['user_id']];
+        $this->renderView('pharmacist\requests.view', $id);
     }
 
     public function viewMedicinesAction()

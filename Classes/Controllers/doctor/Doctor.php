@@ -1,6 +1,6 @@
 <?php
 
-namespace Controllers\doctor;
+namespace Classes\Controllers\doctor;
 
 
 class Doctor extends \Core\Controller

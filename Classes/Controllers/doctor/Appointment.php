@@ -1,11 +1,11 @@
 <?php
 
-namespace Controllers\doctor;
+namespace Classes\Controllers\doctor;
 
 use Core\App;
 use Core\Database;
 
-class Appointment extends \Controllers\doctor\Doctor
+class Appointment extends \Classes\Controllers\doctor\Doctor
 {
     public function showAppointmentsAction()
     {

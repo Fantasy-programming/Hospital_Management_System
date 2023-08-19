@@ -1,11 +1,11 @@
 <?php
 
-namespace Controllers\pharma;
+namespace Classes\Controllers\pharma;
 
 use Core\App;
 use Core\Database;
 
-class Medicines extends \Controllers\pharma\Pharmacist
+class Medicines extends \Classes\Controllers\pharma\Pharmacist
 {
     public function showAction()
     {

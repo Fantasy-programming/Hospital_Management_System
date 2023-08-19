@@ -10,9 +10,11 @@
             <div class="col-12 mb-5 p-0">
                 <h1 class="p-0">Requests</h1>
             </div>
+            <!-- Major security flaw -->
+            <div id="idv" value="<?= $id ?>"></div>
             <div class="row mb-5">
                 <h3 class=" mb-4 p-0">Pending Requests</h3>
-                <table class="table table-bordered table-striped table-hover align-middle w-100" id="pReqTable">
+                <table class="table table-bordered table-striped table-hover align-middle w-100" id="pdReqTable">
                     <thead class="table-secondary">
                         <tr>
                             <th>Purpose</th>

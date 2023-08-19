@@ -1,10 +1,10 @@
 <?php
 
-namespace Controllers\doctor;
+namespace Classes\Controllers\doctor;
 
 use mysqli;
 
-class Results extends \Controllers\doctor\Doctor
+class Results extends \Classes\Controllers\doctor\Doctor
 {
     public function filterAction()
     {

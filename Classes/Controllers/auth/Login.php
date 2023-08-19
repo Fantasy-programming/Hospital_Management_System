@@ -1,7 +1,8 @@
 <?php
 
-namespace Controllers\auth;
+namespace Classes\Controllers\auth;
 
+use Classes\Login\LoginForm;
 use Core\App;
 use Core\Database;
 
@@ -30,9 +31,18 @@ class Login extends \Core\Controller
 
     public function userLoginAction()
     {
-        session_start();
 
         $db = App::resolve(Database::class);
+
+        $form = new LoginForm();
+        if (!$form->validate($_POST['email'], $_POST['password'])) {
+            $this->renderView('auth/view.user.login', [
+                'title' => 'Login',
+                'bg' => 'bd-users',
+                'errors' => $form->getErrors()
+            ]);
+            return;
+        }
         $query = "SELECT id, email, first_name, last_name, password, role FROM patients WHERE email = :mail LIMIT 1";
         $user = $db->query($query, [
             'mail' => $_POST['email']
@@ -43,6 +53,7 @@ class Login extends \Core\Controller
 
                 $_SESSION['user_id'] = $user['id'];
                 $_SESSION['role'] = $user['role'];
+                session_regenerate_id();
 
                 header("Location: /patient/dashboard");
                 exit();
@@ -79,6 +90,7 @@ class Login extends \Core\Controller
 
                 $_SESSION['user_id'] = $user['id'];
                 $_SESSION['role'] = $user['role'];
+                session_regenerate_id();
 
                 header("Location: /admin/dashboard");
                 exit();
@@ -116,6 +128,7 @@ class Login extends \Core\Controller
             if (password_verify($_POST['password'], $user['password'])) {
                 $_SESSION['user_id'] = $user['id'];
                 $_SESSION['role'] = $user['role'];
+                session_regenerate_id();
 
                 switch ($user['role']) {
                     case 'Doctor':

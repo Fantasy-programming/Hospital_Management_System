@@ -26,6 +26,7 @@ authorized($_SESSION['role'] === 'Pharmacist' and isset($_SESSION['user_id']));
     <link href="https://cdn.jsdelivr.net/npm/@uvarov.frontend/vanilla-calendar/build/themes/dark.min.css" rel="stylesheet"> -->
     <link rel="stylesheet" href="/assets/index.css">
     <link rel="stylesheet" href="/assets/css/pharma.css">
+    
 
     <!-- FontAwesome CSS-->
     <link rel="stylesheet" href="/assets/modules/fontawesome6.1.1/css/all.css">
