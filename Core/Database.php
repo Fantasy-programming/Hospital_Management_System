@@ -36,6 +36,19 @@ class Database
         }
     }
 
+    public function insertAndGetId($query, $params = [])
+    {
+        try {
+            $this->statement = $this->connection->prepare($query);
+            $this->statement->execute($params);
+            // After executing the INSERT query, get the last inserted ID
+            $lastInsertId = $this->connection->lastInsertId();
+            return $lastInsertId;
+        } catch (PDOException $e) {
+            return 0;
+        }
+    }
+
     public function findorabort()
     {
         $result = $this->find();
