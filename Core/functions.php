@@ -2,7 +2,13 @@
 
 use Core\Response;
 
-function dd($value)
+/**
+ * Dump and die function for debugging purposes.
+ *
+ * @param mixed $value The value to be dumped.
+ * @return void
+ */
+function dd(mixed $value)
 {
     echo "<pre>";
     var_dump($value);
@@ -11,30 +17,44 @@ function dd($value)
 }
 
 
-function urlIs($url)
+/**
+ * Checks if the current URL matches the given URL.
+ *
+ * @param string $url The URL to compare against the current URL.
+ * @return bool Returns true if the current URL matches the given URL, false otherwise.
+ */
+function urlIs(string $url)
 {
     return $_SERVER['REQUEST_URI'] === $url;
 }
 
-function authorized($condition, $status = Response::FORBIDDEN)
+
+/**
+ * Checks if the given condition is true, otherwise aborts the request with the given status code.
+ *
+ * @param bool $condition The condition to check.
+ * @param array $status The HTTP response status code and message to send if the condition is false.
+ * @return void
+ */
+function authorized($condition, array $status = Response::FORBIDDEN)
 {
     if (!$condition) {
         abort($status);
     }
 }
 
-function base_path($path = '')
+function base_path(string $path = '')
 {
     return rtrim(realpath(BASE_PATH . $path), '/');
 }
 
-function view($path, $attributes = [])
+function view(string $path, array $attributes = [])
 {
     extract($attributes);
     require base_path("Views/{$path}.php");
 }
 
-function abort($code = Response::NOT_FOUND)
+function abort(array $code = Response::NOT_FOUND)
 {
     http_response_code($code['code']);
     view('error', [
@@ -54,16 +74,23 @@ function globalcss()
     <link rel="stylesheet" href="/assets/modules/fontawesome6.1.1/css/all.css">
     <link rel="stylesheet" href="/assets/modules/boxicons/css/boxicons.min.css">
     <script src="/assets/modules/bootstrap-5.1.3/js/bootstrap.bundle.min.js" defer></script>
-
     ';
 }
 
-function loadcss($name)
+function loadcss(string $name, string $type = 'custom')
 {
-    echo '<link rel="stylesheet" href="/assets/css/' . $name . '.css">';
+    if ($type === 'custom') {
+        echo '<link rel="stylesheet" href="/assets/css/' . $name . '.css">';
+    } else {
+        echo '<link rel="stylesheet" href="/assets/modules/' . $name . '.css">';
+    }
 }
 
-function loadjs($name)
+function loadjs(string $name, string $type = 'custom')
 {
-    echo '<script type="module" src="/assets/js/' . $name . '.js" defer></script>';
+    if ($type === 'custom') {
+        echo '<script src="/assets/js/' . $name . '.js" defer></script>';
+    } else {
+        echo '<script src="/assets/modules/' . $name . '.js" defer></script>';
+    }
 }

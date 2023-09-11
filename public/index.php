@@ -2,11 +2,12 @@
 
 session_start();
 
+// Essentials
 const BASE_PATH = __DIR__ . '/../';
-
-
 require BASE_PATH . 'Core/functions.php';
 
+
+// Autoload classes
 spl_autoload_register(function ($class) {
     $class = ltrim($class, '\\');
     $classParts = explode('\\', $class);
@@ -19,13 +20,12 @@ spl_autoload_register(function ($class) {
     }
 });
 
+// Bootstrap
 require base_path('bootstrap.php');
 
+// Routing
 $router = new Core\Router();
 $routes = require base_path('routes.php');
 $url = parse_url($_SERVER['REQUEST_URI'])['path'];
-
-
 $method = $_POST['_method'] ?? $_SERVER['REQUEST_METHOD'];
-
 $router->route($url, $method);

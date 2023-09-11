@@ -1,4 +1,4 @@
 <?php
 
 // Dashboard
-$router->get('/patient/dashboard', 'Controllers\patient\Patient', 'viewHome');
+$router->get('/patient/dashboard', 'patient\Patient', 'viewHome');
