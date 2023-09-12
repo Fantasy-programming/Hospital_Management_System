@@ -2,6 +2,7 @@
 
 namespace Classes\Controllers\pharma;
 
+use Classes\Models\PharmaModel;
 use Core\App;
 use Core\Database;
 
@@ -14,14 +15,14 @@ class Pharmacist extends \Core\Controller
 
     public function viewRequestsAction()
     {
-        session_start();
+
         $id = ["id" => $_SESSION['user_id']];
         $this->renderView('pharmacist\requests.view', $id);
     }
 
     public function viewMedicinesAction()
     {
-        session_start();
+
         $total = $this->getDashInfo($_SESSION['user_id']);
         $this->renderView('pharmacist\medicines.view', $total);
     }
@@ -29,6 +30,12 @@ class Pharmacist extends \Core\Controller
     public function viewPrescriptionsAction()
     {
         $this->renderView('pharmacist\prescriptions.view');
+    }
+
+    public function viewPrescriptionAction($params)
+    {
+        $med = (new PharmaModel)->handle('showPrescription', $params);
+        $this->renderView('pharmacist\prescription.view', $med);
     }
 
     public function viewSettingsAction()

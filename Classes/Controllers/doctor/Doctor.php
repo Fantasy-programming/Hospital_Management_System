@@ -2,6 +2,8 @@
 
 namespace Classes\Controllers\doctor;
 
+use Classes\Models\PatientModel;
+
 
 class Doctor extends \Core\Controller
 {
@@ -20,6 +22,20 @@ class Doctor extends \Core\Controller
         $this->renderView('doctor\patients.view');
     }
 
+    public function viewPatientAction($params)
+    {
+
+        $staff = (new PatientModel())->handle('fetch', $params);
+
+        // keep the patient id in the session
+        $_SESSION['patient_id'] = $params['id'];
+
+        $this->renderView(
+            'doctor\patient.view',
+            $staff
+        );
+    }
+
     public function viewRequestsAction()
     {
         $this->renderView('doctor\requests.view');
@@ -28,10 +44,5 @@ class Doctor extends \Core\Controller
     public function viewSettingsAction()
     {
         $this->renderView('doctor\settings.view');
-    }
-
-    public function viewResultsAction()
-    {
-        $this->renderView('doctor\results.view');
     }
 }

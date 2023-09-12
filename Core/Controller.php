@@ -4,13 +4,13 @@ namespace Core;
 
 class Controller
 {
-    protected function renderView($path, $params = [])
+    protected function renderView(string $path, array $params = [])
     {
         extract($params);
         require base_path("Views/{$path}.php");
     }
 
-    public function handle($action, $params = [])
+    public function handle(string $action, array $params = [])
     {
         $methodName = $action . 'Action';
 
@@ -28,7 +28,7 @@ class Controller
         exit();
     }
 
-    public function abort($code = Response::NOT_FOUND)
+    public function abort(array $code = Response::NOT_FOUND)
     {
         http_response_code($code['code']);
         view("error", $code);

@@ -36,7 +36,7 @@ function urlIs(string $url)
  * @param array $status The HTTP response status code and message to send if the condition is false.
  * @return void
  */
-function authorized($condition, array $status = Response::FORBIDDEN)
+function authorized(bool $condition, array $status = Response::FORBIDDEN)
 {
     if (!$condition) {
         abort($status);

@@ -36,12 +36,15 @@ class Database
         }
     }
 
-    public function insertAndGetId($query, $params = [])
+    public function insertAndGetId(string $query, array $params = [])
     {
         try {
+            
             $this->statement = $this->connection->prepare($query);
             $this->statement->execute($params);
+            
             // After executing the INSERT query, get the last inserted ID
+            
             $lastInsertId = $this->connection->lastInsertId();
             return $lastInsertId;
         } catch (PDOException $e) {
@@ -64,11 +67,6 @@ class Database
         return $result ? $result : 0;
     }
 
-    public function findallorfail()
-    {
-        $result = $this->findall();
-        return $result ? $result : 0;
-    }
 
     public function findAll()
     {

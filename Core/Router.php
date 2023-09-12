@@ -9,7 +9,7 @@ class Router
 
     protected $routes = [];
 
-    public function add($method, $url, $action, $controller)
+    public function add(string $method, string $url, string $action, string $controller)
     {
         $this->routes[] = [
             'url' => $url,
@@ -21,32 +21,32 @@ class Router
         return $this;
     }
 
-    public function get($url, $controller, $action)
+    public function get(string $url, string $controller, string $action)
     {
         return $this->add('GET', $url, $action, $controller);
     }
 
-    public function post($url, $controller, $action)
+    public function post(string $url, string $controller, string $action)
     {
         return $this->add('POST', $url, $action, $controller);
     }
 
-    public function put($url, $controller, $action)
+    public function put(string $url, string $controller, string $action)
     {
         return $this->add('PUT', $url, $action, $controller);
     }
 
-    public function delete($url, $controller, $action)
+    public function delete(string $url, string $controller, string $action)
     {
         return $this->add('DELETE', $url,  $action, $controller);
     }
 
-    public function patch($url, $controller, $action)
+    public function patch(string $url, string $controller, string $action)
     {
         return $this->add('PATCH', $url, $action, $controller);
     }
 
-    public function only($key)
+    public function only(string $key)
     {
         $this->routes[array_key_last($this->routes)]['middleware'] = $key;
     }
@@ -54,7 +54,7 @@ class Router
 
     // TODO: integrate the middleware
 
-    public function route($url, $method)
+    public function route(string $url, string $method)
     {
         foreach ($this->routes as $route) {
             if ($route['method'] === $method) {
@@ -76,14 +76,14 @@ class Router
         $this->abort();
     }
 
-    protected function abort($code = Response::NOT_FOUND)
+    protected function abort(array $code = Response::NOT_FOUND)
     {
         http_response_code($code['code']);
         view("error", $code);
         die();
     }
 
-    protected function matchRoute($url, $route)
+    protected function matchRoute(string $url, array $route)
     {
         // Split the route and URL into segments
         $routeSegments = explode('/', trim($route['url'], '/'));
