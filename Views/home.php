@@ -19,31 +19,37 @@
     <!-- Video Background -->
 
     <video id="bgvid" playsinline autoplay muted loop class="position-absolute top-0 start-0 w-100 h-100">
-      <source src="assets/video/header.mp4" type="video/webm">
       <source src="assets/video/header.mp4" type="video/mp4">
     </video>
 
     <!-- Navigation Bar -->
 
-    <nav class=" navbar navbar-expand-lg container-fluid d-flex justify-content-center py-3 ">
-      <ul class="d-flex align-items-center w-100 justify-content-center">
-        <li class="me-auto">
+    <nav class="navbar navbar-expand-lg container-fluid d-flex justify-content-center py-3">
+      <div class="container">
+        <div class="navbar-header">
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
           <div class="navbar-brand text-white">
             <h2 class="">Turing.</h2><span class="neue-light">Hospital</span>
           </div>
-        </li>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <li><a href="#hero" class="me-5 btn hero color-second text-white px-3 rounded-pill nvlink">Home</a></li>
-        <li><a href="#gallery" class="me-5 aboutus nvlink">Gallery</a></li>
-        <li><a href="#services" class="me-5  services nvlink">Services</a></li>
-        <li><a href="#contactUs" class="me-5 contact nvlink"> Contact Us</a></li>
-        <li><a href="#faq" class="me-5 faq nvlink">FAQ</a></li>
-        <li class="ms-auto"><a href="/login" class="btn btn-outline-light px-3 rounded-pill me-3">Login</a></li>
-        <li><a href="/signup" class="btn btn-outline-light px-3 rounded-pill ">Sign Up</a></li>
-      </ul>
+        </div>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+          <ul class="navbar-nav">
+            <li class="nav-item"><a href="#hero" class="nav-link me-5 btn hero color-second text-white px-3 rounded-pill nvlink">Home</a></li>
+            <li class="nav-item"><a href="#gallery" class="nav-link me-5 aboutus nvlink">Gallery</a></li>
+            <li class="nav-item"><a href="#services" class="nav-link me-5 services nvlink">Services</a></li>
+            <li class="nav-item"><a href="#contactUs" class="nav-link me-5 contact nvlink">Contact Us</a></li>
+            <li class="nav-item"><a href="#faq" class="nav-link me-5 faq nvlink">FAQ</a></li>
+          </ul>
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item"><a href="/login" class="btn btn-outline-light px-3 rounded-pill me-3">Login</a></li>
+            <li class="nav-item"><a href="/signup" class="btn btn-outline-light px-3 rounded-pill">Sign Up</a></li>
+          </ul>
+        </div>
+      </div>
     </nav>
+
 
 
 
@@ -751,4 +757,5 @@
     </div>
   </footer>
 </body>
+
 </html>

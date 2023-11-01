@@ -12,7 +12,7 @@ class Database
     public $connection;
     public $statement;
 
-    public function __construct($config, $user = 'root', $password = '')
+    public function __construct($config, string $user = 'root', string  $password = '')
     {
         try {
 
@@ -24,7 +24,7 @@ class Database
             throw new Exception("Database connection failed: " . $e->getMessage());
         }
     }
-    public function query($query, $params = [])
+    public function query($query, array $params = [])
     {
         try {
 
@@ -39,12 +39,12 @@ class Database
     public function insertAndGetId(string $query, array $params = [])
     {
         try {
-            
+
             $this->statement = $this->connection->prepare($query);
             $this->statement->execute($params);
-            
+
             // After executing the INSERT query, get the last inserted ID
-            
+
             $lastInsertId = $this->connection->lastInsertId();
             return $lastInsertId;
         } catch (PDOException $e) {

@@ -1,0 +1,14 @@
+version: '3'
+
+services:
+
+  mysqldb:
+    image: mysql:8.0.17
+    environment:
+      MYSQL_ROOT_PASSWORD: tuestfou
+      MYSQL_DATABASE: UniDB
+    ports:
+      - "3306:3306"
+    volumes:
+      - "./config/my.conf:/etc/mysql/conf.d/config-file.cnf"
+      - "./data:/var/lib/mysql:rw"

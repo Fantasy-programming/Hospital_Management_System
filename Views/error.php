@@ -9,17 +9,15 @@
 </head>
 
 <body>
-
     <div id="error">
         <div class="container text-center">
             <div class="pt-8">
                 <h1 class="errors-titles"><?= $code ?></h1>
                 <p><?= $message ?></p>
-                <a href="/" class="text-blue btn">Back to page</a>
+                <a href="/" class="text-blue btn">Back to home</a>
             </div>
         </div>
     </div>
-
 </body>
 
 </html>
