@@ -1,0 +1,9 @@
+RewriteEngine On
+
+# Redirect "/example.php" to "/example"
+RewriteCond %{THE_REQUEST} /([^.]+)\.php [NC]
+RewriteRule ^ /%1 [NC,L,R]
+
+# Rewrite "/example" to "/example.php"
+RewriteCond %{REQUEST_FILENAME}.php -f
+RewriteRule ^ %{REQUEST_URI}.php [NC,L]

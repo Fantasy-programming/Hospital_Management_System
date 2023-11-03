@@ -1,0 +1,230 @@
+::root {
+  --font-color: #ffff;
+  --font-family-1: "RodinBokutohPro-B";
+  --font-family-2: "RodinBokutohPro-DB";
+  --font-family-3: "Neue Machina";
+}
+
+body {
+  font-family: "Helvetica Neue", sans-serif;
+}
+
+h1 {
+  font-family: "RodinBokutohPro-B";
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+li {
+  display: inline;
+}
+
+video {
+  object-fit: cover;
+  z-index: -1;
+}
+
+header {
+  color: #ffff;
+}
+
+section {
+  padding-bottom: 4rem !important;
+}
+
+a {
+  text-decoration: none;
+  color: #ffff;
+}
+
+/* Testinmonials */
+
+.testimonials li {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  border: 2px solid white;
+  display: inline-block;
+  position: relative;
+  box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.2);
+  -webkit-transition: 0.2s ease;
+  transition: 0.2s ease;
+}
+
+.testimonials li:nth-child(1) {
+  background-image: url("../images/doctor.jpg");
+  background-size: cover;
+}
+.testimonials li:nth-child(2) {
+  background-image: url("../images/doctor2.jpg");
+  background-size: cover;
+}
+.testimonials li:nth-child(3) {
+  background-image: url("../images/doctor3.jpg");
+  background-size: cover;
+}
+.testimonials li:nth-child(4) {
+  background-image: url("../images/doctor4.jpg");
+  background-size: cover;
+}
+.testimonials li:nth-child(n + 2) {
+  margin-left: -5px;
+}
+
+.testimonials ul:hover li:nth-child(n + 2) {
+  margin-left: 0px;
+}
+
+/* utility classes */
+
+.alignment {
+  padding: 0 6rem;
+}
+
+.space-mid {
+  margin-top: 4rem;
+  margin-bottom: 4rem;
+}
+
+.hero-bottom {
+  margin-top: 8.5rem;
+  padding-bottom: 4rem;
+}
+
+.neue {
+  font-family: "Neue Machina";
+}
+
+.neue-light {
+  font-family: "Neue Machina";
+  font-weight: 300;
+}
+
+.neue-bold {
+  font-family: "Neue Machina";
+  font-weight: bold;
+}
+
+.color-second {
+  background-color: #1344ff;
+}
+
+.discount-text {
+  width: 55%;
+  font-weight: 600;
+}
+
+.panel {
+  position: relative;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 60vh;
+  border-radius: 5px;
+  color: #ffffff;
+  cursor: pointer;
+  flex: 0.5;
+  margin: 10px;
+  transition: all 700ms ease-in;
+}
+
+.panel h3 {
+  font-size: 24px;
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  margin: 0;
+  opacity: 0;
+}
+
+.panel.active {
+  flex: 5;
+}
+
+.panel.active h3 {
+  opacity: 1;
+  transition: opacity 0.3s ease-in 0.4s;
+}
+
+/* Gallery */
+
+.panel:nth-child(1) {
+  background-image: url("../images/galery1.jpg");
+}
+.panel:nth-child(2) {
+  background-image: url("../images/galery2.jpg");
+}
+.panel:nth-child(3) {
+  background-image: url("../images/galery3.jpg");
+}
+.panel:nth-child(4) {
+  background-image: url("../images/galery4.jpg");
+}
+
+.panel:nth-child(5) {
+  background-image: url("../images/galery5.jpg");
+}
+
+.panel:nth-child(6) {
+  background-image: url("../images/doctor4.jpg");
+}
+
+input::placeholder {
+  color: #ffff !important;
+}
+
+input {
+  border: 1px solid #dee2e6;
+}
+
+select option {
+  color: black;
+  background-color: #dee2e6;
+}
+
+.form-select-indicator-color {
+  color: #ffff;
+}
+
+.hn-bold {
+  font-family: "Helvetica Neue";
+  font-weight: bold;
+}
+
+footer hr {
+  margin-top: 5rem;
+  margin-bottom: 5rem;
+}
+
+.dropball {
+  height: 3rem;
+  width: 3rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.rotate {
+  transition: transform 0.5s ease-in-out;
+  transform: rotate(45deg);
+  filter: invert(100%) sepia(0%) saturate(0%) hue-rotate(93deg) brightness(103%)
+    contrast(103%);
+}
+
+@media (max-width: 980px) {
+  .alignment {
+    padding: 0 1rem;
+  }
+  .navbar-header {
+    width: 100%;
+  }
+
+  .hero-info {
+    width: 100% !important;
+    margin-bottom: 2rem;
+  }
+}
