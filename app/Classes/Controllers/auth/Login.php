@@ -105,10 +105,7 @@ class Login extends \Core\Controller
     public function staffLoginAction()
     {
 
-        session_start();
-
         $db = App::resolve(Database::class);
-
 
         $query = "SELECT id, username, password, role FROM staff WHERE username = :user AND role = :role LIMIT 1";
         $params = [

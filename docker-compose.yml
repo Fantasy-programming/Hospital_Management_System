@@ -14,7 +14,6 @@ services:
       - internal    
     volumes:
       - ./app/:/var/www/html/
-      # Mount nginx logs
       - ./logs/nginx:/var/log/nginx/
 
   php:    
@@ -37,19 +36,15 @@ services:
       - internal    
     volumes:
       - mariadb:/var/lib/mysql
+      - ./mysql/medicaldb.sql:/docker-entrypoint-initdb.d/medicaldb.sql
     environment:
       MYSQL_ROOT_PASSWORD: root
       MYSQL_USER: user 
       MYSQL_PASSWORD: user
-      # Set port numbers
       MYSQL_TCP_PORT: 3307
       MYSQL_UNIX_PORT: 3307
-      # Set MARIADB_MYSQL_LOCALHOST_USER to a non-empty value to create the mysql@locahost database user. 
-      # This user is especially useful for a variety of health checks and backup scripts.
-      # https://hub.docker.com/_/mariadb
-      # MARIADB_MYSQL_LOCALHOST_USER: true
 
-  # Define the pma service (phpMyAdmin)
+
   pma:
     image: phpmyadmin
     expose:
