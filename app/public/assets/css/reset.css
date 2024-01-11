@@ -1,0 +1,81 @@
+*,
+::after,
+::before {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100vh;
+  width: 100%;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #212529;
+  text-align: left;
+  background-color: #fff;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  margin: 0;
+  padding: 0;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* to move */
+
+.transition {
+  -webkit-transition: all 0.2s ease;
+  -moz-transition: all 0.2s ease;
+  -ms-transition: all 0.2s ease;
+  -o-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+}
+
+.media,
+.Thanks {
+  margin-top: 20px;
+}
+
+.media-body {
+  margin-left: 10px;
+}
+
+/** Errors **/
+
+#error {
+  height: 100vh;
+  padding-top: 10rem;
+  width: 100%;
+  background: #f9fbfd;
+}
+
+#error .errors-titles {
+  font-size: 10rem;
+  font-family: "Neue Machina";
+  color: #25396f;
+  font-weight: bold;
+  line-height: 1.2;
+  margin-bottom: 0.5rem;
+  margin-top: 0;
+}
+
+#error p {
+  color: #888 !important;
+}
+
+#error a {
+  background-color: #25396f;
+  color: #fff;
+}

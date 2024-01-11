@@ -4,13 +4,23 @@ namespace Core;
 
 class Controller
 {
-    protected function renderView(string $path, array $params = [])
+    /**
+     * @return void
+     * @param array<int,mixed> $params
+    */
+
+    protected function renderView(string $path, array $params = []): void
     {
         extract($params);
         require base_path("Views/{$path}.php");
-    }
+  }
 
-    public function handle(string $action, array $params = [])
+    /**
+     * @return void
+     * @param array<int,mixed> $params
+    */
+
+    public function handle(string $action, array $params = []): void
     {
         $methodName = $action . 'Action';
 
@@ -21,14 +31,25 @@ class Controller
         }
     }
 
-    public function notFoundAction()
+    /**
+     * This render 404 page not found
+     * @return void
+    */
+
+    public function notFoundAction(): void
     {
         http_response_code(404);
         $this->abort();
         exit();
     }
 
-    public function abort(array $code = Response::NOT_FOUND)
+    /**
+     * This function render error pages
+     * @return void
+     * @param array<int,mixed> $code
+    */
+
+    public function abort(array $code = Response::NOT_FOUND): void
     {
         http_response_code($code['code']);
         view("error", $code);

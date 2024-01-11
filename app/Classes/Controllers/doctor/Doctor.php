@@ -7,21 +7,23 @@ use Classes\Models\PatientModel;
 
 class Doctor extends \Core\Controller
 {
-    public function viewHomeAction()
+    public function viewHomeAction(): void
     {
         $this->renderView('doctor\dashboard.view');
     }
 
-    public function viewAppointmentsAction()
+    public function viewAppointmentsAction(): void
     {
         $this->renderView('doctor\appointments.view');
     }
 
-    public function viewPatientsAction()
+    public function viewPatientsAction(): void
     {
         $this->renderView('doctor\patients.view');
     }
-
+    /**
+     * @return void
+     */
     public function viewPatientAction($params)
     {
 
@@ -35,12 +37,16 @@ class Doctor extends \Core\Controller
             $staff
         );
     }
-
+    /**
+     * @return void
+     */
     public function viewRequestsAction()
     {
         $this->renderView('doctor\requests.view');
     }
-
+    /**
+     * @return void
+     */
     public function viewSettingsAction()
     {
         $this->renderView('doctor\settings.view');

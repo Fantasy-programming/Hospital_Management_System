@@ -14,21 +14,22 @@
 
   <!-- Header Section -->
 
-  <header class="position-relative alignment">
+  <header class="position-relative  text-white">
 
     <!-- Video Background -->
 
-    <video id="bgvid" playsinline autoplay muted loop class="position-absolute top-0 start-0 w-100 h-100">
-      <source src="assets/video/header.mp4" type="video/mp4">
+    <video playsinline autoplay muted loop poster="https://res.cloudinary.com/ds6f5ukr2/image/upload/f_auto,q_auto/v1/HMS/vgzcrnek9okx8fzfbbln" class="position-absolute top-0 start-0 w-100 h-100 object-fit-cover z-n1">
+      <source src="https://res.cloudinary.com/ds6f5ukr2/video/upload/f_auto:video,q_auto/v1/HMS/ytfdge7c2pccozi7e0js" type="video/webm">
+      <source src="https://res.cloudinary.com/ds6f5ukr2/video/upload/f_auto:video,q_auto/v1/HMS/ytfdge7c2pccozi7e0js" type="video/mp4">
     </video>
 
     <!-- Navigation Bar -->
 
     <nav class="navbar navbar-expand-lg container-fluid d-flex justify-content-center py-3">
-      <div class="container">
+      <div class="container-fluid">
         <div class="navbar-header justify-content-between align-items-center d-flex">
         <div class="navbar-brand text-white">
-            <h2>Turing.</h2><span class="neue-light text-center ps-1">Hospital</span>
+            <h2>Turing.</h2><span class="neue fw-light text-center ps-1">Hospital</span>
           </div>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -62,12 +63,12 @@
 
     <!-- Hero Section -->
 
-    <section id="hero" class="space-mid">
+    <section id="hero">
       <div class="d-flex flex-lg-row justify-content-between align-items-center">
         <div>
           <h1 class="fs-1 w-75">Over a long period of work we have provided hundreds of thousand of medical services</h1>
         </div>
-        
+
         <div class="testimonials d-none d-md-flex flex-column flex-nowrap justify-content-center">
           <ul class="d-flex flex-row flex-nowrap mb-2">
             <li></li>
@@ -80,12 +81,12 @@
             <p>Satisfied Patient</p>
           </div>
         </div>
-
       </div>
 
-      <div class="hero-bottom space-mid d-flex flex-md-row flex-column justify-content-between">
-        <strong class="hero-f-1">Facts</strong>
-        <div class="w-25 hero-info">
+        <div class="w-100 d-flex flex-md-row flex-column gap-5 justify-content-between">
+          <div class="d-flex flex-md-row flex-column justify-content-between gap-1"> 
+        <strong >Facts</strong>
+        <div class="w-50 hero-info">
           <p>Premium equipment that meets
             the state-of-the-art in the
             Medical market</p>
@@ -94,12 +95,13 @@
             can be trusted and get the best
             results</p>
         </div>
+          </div>
         <div class="color-second rounded-0 p-4">
           <div class="pb-5">
             <p class="discount-text">Take the discount for the first visit to an ophthalmologist</p>
           </div>
           <div class="d-flex pt-5 flex-row align-items-center flex-nowrap justify-content-between">
-            <h3 class="neue-bold fs-1">20%</h3>
+            <h3 class="neue fw-bold fs-1">20%</h3>
             <a href="#contactUs" class="btn btn-light rounded-pill py-2 px-4 font-size-sm text-dark">Make an appointment</a>
           </div>
         </div>
@@ -108,9 +110,9 @@
   </header>
 
   <!-- About us Section -->
-  <section id="aboutus" class="alignment">
+  <section id="aboutus" >
     <div class="container-fluid">
-      <div class="row mb-5">
+      <div class="row mb-5 centerText">
         <div class="col-md-2">
           <h2 class="fs-5">About Us</h2>
         </div>
@@ -121,7 +123,7 @@
           <a href="#" class="btn btn-primary rounded-pill px-5 py-2 color-second">Learn more</a>
         </div>
         <div class="col-md-5">
-          <img src="assets/images/hospital.png" alt="" class="img-fluid w-75">
+          <img src="https://res.cloudinary.com/ds6f5ukr2/image/upload/f_auto,q_auto/v1/HMS/l6mvjheqk2daf6iywkqk" alt="" class="img-fluid w-75">
         </div>
       </div>
       <div class="row mb-4">
@@ -209,7 +211,7 @@
   </section>
 
   <!-- Gallery Section -->
-  <section id="gallery" class="alignment space-mid">
+  <section id="gallery" class=" space-mid">
     <div class="container-fluid">
       <div class="row mb-5">
         <div class="col-md-2">
@@ -262,7 +264,7 @@
   </section>
 
   <!-- Services Section -->
-  <section id="services" class="alignment space-mid">
+  <section id="services" class=" space-mid">
     <div class="container-fluid">
       <div class="row mb-5">
         <div class="col-md-2">
@@ -426,7 +428,7 @@
   </section>
 
   <!-- ContactUS Section -->
-  <section id="contactUs" class="alignment color-second space-mid text-white py-5">
+  <section id="contactUs" class=" color-second space-mid text-white py-5">
     <div class="container-fluid">
       <div class="row mb-5">
         <div class="col-md-2">
@@ -519,7 +521,7 @@
   </section>
 
   <!-- FAQ Section -->
-  <section id="faq" class="alignment space-mid ">
+  <section id="faq" class=" space-mid ">
     <div class="container-fluid">
       <div class="row mb-5">
         <div class="col-md-2">
@@ -670,7 +672,7 @@
   </section>
 
   <!-- Footer -->
-  <footer class="alignment color-second text-white py-5">
+  <footer class=" color-second text-white py-5">
     <div class="container-fluid">
       <form class="footer-top mb-5">
         <div class="row mb-5 align-items-center">
@@ -682,7 +684,7 @@
                 </svg>
                 <div class="d-flex mx-3 flex-column flex-nowrap">
                   <h3>Turing.</h3>
-                  <span class="neue-light">Hospital</span>
+                  <span class="neue fw-light">Hospital</span>
                 </div>
               </div>
             </h2>

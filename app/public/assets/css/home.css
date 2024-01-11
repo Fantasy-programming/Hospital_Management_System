@@ -1,39 +1,34 @@
-::root {
-  --font-color: #ffff;
-  --font-family-1: "RodinBokutohPro-B";
-  --font-family-2: "RodinBokutohPro-DB";
-  --font-family-3: "Neue Machina";
-}
+/*********************/
+/* Reset & General  */
+/********************/
 
 body {
-  font-family: "Helvetica Neue", sans-serif;
+  font-family: var(--font-primary);
+}
+
+body > * {
+  padding: 0 6rem;
+}
+
+#hero {
+  padding: 4rem 0rem;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 8rem;
+}
+
+body > section {
+  padding: 4rem 6rem !important;
 }
 
 h1 {
-  font-family: "RodinBokutohPro-B";
-}
-
-ul {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
+  font-family: var(--font-secondary);
 }
 
 li {
   display: inline;
-}
-
-video {
-  object-fit: cover;
-  z-index: -1;
-}
-
-header {
-  color: #ffff;
-}
-
-section {
-  padding-bottom: 4rem !important;
 }
 
 a {
@@ -56,23 +51,23 @@ a {
 }
 
 .testimonials li:nth-child(1) {
-  background-image: url("../images/doctor.jpg");
+  background-image: url("https://res.cloudinary.com/ds6f5ukr2/image/upload/f_auto,q_auto/v1/HMS/jkrbdwx3n12jujtdowfa");
   background-size: cover;
 }
 .testimonials li:nth-child(2) {
-  background-image: url("../images/doctor2.jpg");
+  background-image: url("https://res.cloudinary.com/ds6f5ukr2/image/upload/f_auto,q_auto/v1/HMS/hx2jptef8q97vokorwwh");
   background-size: cover;
 }
 .testimonials li:nth-child(3) {
-  background-image: url("../images/doctor3.jpg");
+  background-image: url("https://res.cloudinary.com/ds6f5ukr2/image/upload/f_auto,q_auto/v1/HMS/nimkjsil5qeun7jrkfig");
   background-size: cover;
 }
 .testimonials li:nth-child(4) {
-  background-image: url("../images/doctor4.jpg");
+  background-image: url("https://res.cloudinary.com/ds6f5ukr2/image/upload/f_auto,q_auto/v1/HMS/asz3udj5z72lq2p0iim4");
   background-size: cover;
 }
 .testimonials li:nth-child(n + 2) {
-  margin-left: -5px;
+  margin-left: -10px;
 }
 
 .testimonials ul:hover li:nth-child(n + 2) {
@@ -81,32 +76,8 @@ a {
 
 /* utility classes */
 
-.alignment {
-  padding: 0 6rem;
-}
-
-.space-mid {
-  margin-top: 4rem;
-  margin-bottom: 4rem;
-}
-
-.hero-bottom {
-  margin-top: 8.5rem;
-  padding-bottom: 4rem;
-}
-
 .neue {
   font-family: "Neue Machina";
-}
-
-.neue-light {
-  font-family: "Neue Machina";
-  font-weight: 300;
-}
-
-.neue-bold {
-  font-family: "Neue Machina";
-  font-weight: bold;
 }
 
 .color-second {
@@ -153,25 +124,27 @@ a {
 /* Gallery */
 
 .panel:nth-child(1) {
-  background-image: url("../images/galery1.jpg");
+  background-image: url("https://res.cloudinary.com/ds6f5ukr2/image/upload/f_auto,q_auto/v1/HMS/ncixszzrbopagpzfpnba");
 }
 .panel:nth-child(2) {
-  background-image: url("../images/galery2.jpg");
+  background-image: url("https://res.cloudinary.com/ds6f5ukr2/image/upload/f_auto,q_auto/v1/HMS/vzf6fat2e7njvnuldvoi");
 }
 .panel:nth-child(3) {
-  background-image: url("../images/galery3.jpg");
+  background-image: url("https://res.cloudinary.com/ds6f5ukr2/image/upload/f_auto,q_auto/v1/HMS/ssvomex2pexh2i0q5eov");
 }
 .panel:nth-child(4) {
-  background-image: url("../images/galery4.jpg");
+  background-image: url("https://res.cloudinary.com/ds6f5ukr2/image/upload/f_auto,q_auto/v1/HMS/iadgrzgzrtzgxvi3j0e0");
 }
 
 .panel:nth-child(5) {
-  background-image: url("../images/galery5.jpg");
+  background-image: url("https://res.cloudinary.com/ds6f5ukr2/image/upload/f_auto,q_auto/v1/HMS/w5pmd8i72rgf4qkyjbre");
 }
 
 .panel:nth-child(6) {
-  background-image: url("../images/doctor4.jpg");
+  background-image: url("https://res.cloudinary.com/ds6f5ukr2/image/upload/f_auto,q_auto/v1/HMS/asz3udj5z72lq2p0iim4");
 }
+
+/* Appointment */
 
 input::placeholder {
   color: #ffff !important;
@@ -190,15 +163,7 @@ select option {
   color: #ffff;
 }
 
-.hn-bold {
-  font-family: "Helvetica Neue";
-  font-weight: bold;
-}
-
-footer hr {
-  margin-top: 5rem;
-  margin-bottom: 5rem;
-}
+/* Dropdowns */
 
 .dropball {
   height: 3rem;
@@ -215,16 +180,48 @@ footer hr {
     contrast(103%);
 }
 
+/* Footer */
+
+footer hr {
+  margin-top: 5rem;
+  margin-bottom: 5rem;
+}
+
+/* media queries */
+
 @media (max-width: 980px) {
-  .alignment {
-    padding: 0 1rem;
+  body > * {
+    padding: 0 2rem;
   }
+
+  body > section {
+    padding: 4rem 2rem !important;
+  }
+
+  #hero {
+    padding: 2rem 0rem;
+    gap: 6rem;
+  }
+
   .navbar-header {
-    width: 100%;
+    width: 100% !important;
   }
 
   .hero-info {
     width: 100% !important;
     margin-bottom: 2rem;
+  }
+
+  .centerText {
+    text-align: center;
+  }
+
+  .centerText p {
+    width: 100% !important;
+    padding: 2rem 2rem;
+  }
+
+  .centerText a {
+    margin: 1rem 2rem !important;
   }
 }

@@ -9,12 +9,12 @@ use Core\Database;
 class Login extends \Core\Controller
 {
 
-    public function showUserLoginAction()
+    public function showUserLoginAction(): void
     {
         $this->renderView('auth/view.user.login', ['title' => 'Login', 'bg' => 'bd-users']);
     }
 
-    public function showAdminLoginAction()
+    public function showAdminLoginAction(): void
     {
         $this->renderView('auth/view.admin.login', ['title' => 'Admin login', 'bg' => 'bd-admin']);
     }

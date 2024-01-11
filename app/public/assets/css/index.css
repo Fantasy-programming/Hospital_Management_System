@@ -1,0 +1,128 @@
+/********************************************/
+/*                  Imports                 */
+/********************************************/
+
+@import url("https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css");
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css");
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;1,100;1,300;1,400&display=swap");
+
+/** Custom **/
+@import url("./vars.css");
+@import url("./reset.css");
+
+@font-face {
+  font-family: "RodinBokutohPro-B";
+  src:
+    url("../fonts/RodinBokutohPro-B.ttf.woff") format("woff"),
+    url("../fonts/RodinBokutohPro-B.ttf.svg#RodinBokutohPro-B") format("svg"),
+    url("../fonts/RodinBokutohPro-B.ttf.eot"),
+    url("../fonts/RodinBokutohPro-B.ttf.eot?#iefix") format("embedded-opentype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "RodinBokutohPro-DB";
+  src:
+    url("../fonts/RodinBokutohPro-DB.ttf.woff") format("woff"),
+    url("../fonts/RodinBokutohPro-DB.ttf.svg#RodinBokutohPro-DB") format("svg"),
+    url("../fonts/RodinBokutohPro-DB.ttf.eot"),
+    url("../fonts/RodinBokutohPro-DB.ttf.eot?#iefix")
+      format("embedded-opentype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Neue Machina";
+  src:
+    url("../fonts/NeueMachina-Light.woff2") format("woff2"),
+    url("../fonts/NeueMachina-Light.woff") format("woff");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Neue Machina";
+  src:
+    url("../fonts/NeueMachina-Ultrabold.woff2") format("woff2"),
+    url("../fonts/NeueMachina-Ultrabold.woff") format("woff");
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Neue Machina";
+  src:
+    url("../fonts/NeueMachina-Regular.woff2") format("woff2"),
+    url("../fonts/NeueMachina-Regular.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "HelveticaNeue";
+  src:
+    url("../fonts/HelveticaNeueBold.woff2") format("woff2"),
+    url("../fonts/HelveticaNeueBold.woff") format("woff");
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "HelveticaNeue";
+  src:
+    url("../fonts/HelveticaNeueMedium.woff2") format("woff2"),
+    url("../fonts/HelveticaNeueMedium.woff") format("woff");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "HelveticaNeue";
+  src:
+    url("../fonts/HelveticaNeueBlackCond.woff2") format("woff2"),
+    url("../fonts/HelveticaNeueBlackCond.woff") format("woff");
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "HelveticaNeue";
+  src:
+    url("../fonts/HelveticaNeueThin.woff2") format("woff2"),
+    url("../fonts/HelveticaNeueThin.woff") format("woff");
+  font-weight: 100;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "HelveticaNeue";
+  src:
+    url("../fonts/HelveticaNeueLight.woff2") format("woff2"),
+    url("../fonts/HelveticaNeueLight.woff") format("woff");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Mark for Ebiquity W05 Bold";
+  src:
+    url("../fonts/Mark\ for\ Ebiquity\ W05\ Bold.svg") format("svg"),
+    url("../fonts/Mark\ for\ Ebiquity\ W05\ Bold.ttf") format("truetype"),
+    url("../fonts/Mark\ for\ Ebiquity\ W05\ Bold.woff") format("woff"),
+    url("../fonts/Mark\ for\ Ebiquity\ W05\ Bold.woff2") format("woff2"),
+    url("../fonts/Mark\ for\ Ebiquity\ W05\ Bold.eot")
+      format("embedded-opentype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}

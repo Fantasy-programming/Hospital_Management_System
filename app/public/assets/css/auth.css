@@ -2,27 +2,44 @@
 /*          Auth Pages Styling              */
 /********************************************/
 
-:root {
-  --input-padding-x: 1.5rem;
-  --input-padding-y: 0.75rem;
-  --font-color: #fff;
-  --font-color-secondary: #272727;
-  --font-face-primary: "Mark for Ebiquity W05 Regular";
-  --font-face-secondary: "Roboto";
+body {
+  color: #fff;
 }
 
-@font-face {
+h1,
+h2 {
   font-family: "Mark for Ebiquity W05 Bold";
-  src: url("../fonts/Mark\ for\ Ebiquity\ W05\ Bold.svg") format("svg"),
-    url("../fonts/Mark\ for\ Ebiquity\ W05\ Bold.ttf") format("truetype"),
-    url("../fonts/Mark\ for\ Ebiquity\ W05\ Bold.woff") format("woff"),
-    url("../fonts/Mark\ for\ Ebiquity\ W05\ Bold.woff2") format("woff2"),
-    url("../fonts/Mark\ for\ Ebiquity\ W05\ Bold.eot")
-      format("embedded-opentype");
-  font-weight: normal;
-  font-style: normal;
-  font-display: swap;
+  font-weight: 700;
+  line-height: 100%;
+  letter-spacing: 0.01em;
+  text-transform: uppercase;
 }
+
+h1 {
+  font-size: 3.805676093570752rem;
+}
+
+h2 {
+  font-size: 2rem;
+}
+
+a {
+  color: #272727; /* extract this */
+}
+
+.Title-bottom {
+  bottom: 10rem;
+}
+
+.flash-message {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 9999;
+  display: none;
+}
+
+/* Backgrounds */
 
 .bd-admin {
   background-color: #303030;
@@ -102,49 +119,11 @@
       #1b1b1b77
     );
   background-size: 58px 102px;
-  background-position: 0 0, 0 0, 29px 51px, 29px 51px, 0 0, 29px 51px;
-}
-
-body {
-  color: var(--font-color);
-}
-
-h1 {
-  font-family: "Mark for Ebiquity W05 Bold";
-  font-size: 3.805676093570752rem;
-  font-weight: 700;
-  line-height: 100%;
-  letter-spacing: 0.01em;
-  text-transform: uppercase;
-  color: var(--font-color);
-}
-
-h2 {
-  font-family: "Mark for Ebiquity W05 Bold";
-  font-size: 2rem;
-  font-weight: 700;
-  line-height: 100%;
-  letter-spacing: 0.01em;
-  text-transform: uppercase;
-  color: var(--font-color);
-}
-
-p {
-  font-family: var(--font-face-secondary);
-}
-
-a {
-  color: var(--font-color-secondary);
-}
-
-.Title-bottom {
-  bottom: 10rem;
-}
-
-.flash-message {
-  position: fixed;
-  top: 20px;
-  right: 20px;
-  z-index: 9999;
-  display: none;
+  background-position:
+    0 0,
+    0 0,
+    29px 51px,
+    29px 51px,
+    0 0,
+    29px 51px;
 }

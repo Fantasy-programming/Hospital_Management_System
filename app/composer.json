@@ -1,0 +1,29 @@
+{
+  "name": "fantasy/turinghms",
+  "description": "A modular hospital management system",
+  "type": "project",
+  "authors": [
+    {
+      "name": "Fantasy",
+      "email": "37631123+Fantasy-programming@users.noreply.github.com"
+    }
+  ],
+  "autoload": {
+    "psr-4": {
+      "Core\\": "Core/",
+      "Classes\\": "Classes/"
+    }
+  },
+  "require-dev": {
+    "pestphp/pest": "^2.30",
+    "friendsofphp/php-cs-fixer": "^3.45"
+  },
+  "config": {
+    "allow-plugins": {
+      "pestphp/pest-plugin": true
+    }
+  },
+  "require": {
+    "vlucas/phpdotenv": "^5.6"
+  }
+}

@@ -6,10 +6,21 @@ namespace Core;
 class Container
 {
     protected $bindings = [];
-    public function bind(string $key, callable $factoryfunc)
+
+    /**
+     * @return void
+     * @param callable(): mixed $factoryfunc
+    */
+
+    public function bind(string $key, callable $factoryfunc): void
     {
         $this->bindings[$key] = $factoryfunc;
     }
+
+    /**
+     * @return mixed
+     * @param string $key
+    */
 
     public function resolve(string $key)
     {

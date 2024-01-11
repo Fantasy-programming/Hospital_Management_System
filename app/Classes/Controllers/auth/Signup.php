@@ -9,7 +9,7 @@ use Core\Validator;
 class Signup extends \Core\Controller
 {
 
-  public function showUserSignupAction()
+  public function showUserSignupAction(): void
   {
     $this->renderView('auth/view.user.register', [
       'title' => 'Signup',
@@ -18,12 +18,12 @@ class Signup extends \Core\Controller
   }
 
 
-  public function showStaffSignupAction()
+  public function showStaffSignupAction(): void
   {
     $this->renderView('auth/view.staff.register', ['title' => 'Staff Signup', 'bg' => 'bd-staff']);
   }
 
-  public function userSignupAction()
+  public function userSignupAction(): void
   {
 
     // Perform form validation
@@ -64,15 +64,12 @@ class Signup extends \Core\Controller
       $errors[] = "Last name should not contain special characters.";
     }
 
-    if (!preg_match("/^[a-zA-Z0-9]*$/", $userName)) {
-      $errors[] = "Username should not contain special characters.";
-    }
 
-    if (!preg_match("/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/", $password)) {
-      $errors[] = "Password should be at least 8 characters long and contain at least one uppercase letter, one lowercase letter, one number, and one special character.";
-    }
+    // if (!preg_match("/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/", $password)) {
+    //   $errors[] = "Password should be at least 8 characters long and contain at least one uppercase letter, one lowercase letter, one number, and one special character.";
+    // }
 
-    if (Core\Validator::age($age)) {
+    if (Validator::age($age)) {
       $errors['age'] = "Age should be over 14 and under 130.";
     }
 

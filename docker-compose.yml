@@ -1,8 +1,7 @@
 version: "3"
 
 services:
-
-  nginx:    
+  nginx:
     build:
       context: .
       dockerfile: nginx/Dockerfile
@@ -11,39 +10,38 @@ services:
     ports:
       - 40001:80
     networks:
-      - internal    
+      - internal
     volumes:
       - ./app/:/var/www/html/
       - ./logs/nginx:/var/log/nginx/
 
-  php:    
+  php:
     build:
       context: .
       dockerfile: php/Dockerfile
     networks:
-      - internal    
+      - internal
     volumes:
       - ./app/:/var/www/html/
       - ./logs/php.log:/var/log/fpm-php.www.log
 
   mariadb:
-    image: mariadb    
+    image: mariadb
     expose:
-      - 3307    
+      - 3307
     ports:
-      - 3307:3306    
+      - 3307:3306
     networks:
-      - internal    
+      - internal
     volumes:
       - mariadb:/var/lib/mysql
       - ./mysql/medicaldb.sql:/docker-entrypoint-initdb.d/medicaldb.sql
     environment:
       MYSQL_ROOT_PASSWORD: root
-      MYSQL_USER: user 
+      MYSQL_USER: user
       MYSQL_PASSWORD: user
       MYSQL_TCP_PORT: 3307
       MYSQL_UNIX_PORT: 3307
-
 
   pma:
     image: phpmyadmin
@@ -55,11 +53,11 @@ services:
       - internal
     environment:
       # Disable arbitrary server connection; use the configured host and port
-      - PMA_ARBITRARY=0 
+      - PMA_ARBITRARY=0
       # Set the host for phpMyAdmin to connect to
       - PMA_HOST=mariadb
       # Set the port for phpMyAdmin to connect to
-      - PMA_PORT=3307 
+      - PMA_PORT=3307
 
 # Define the "internal" network for communication between containers
 networks:
@@ -69,3 +67,4 @@ networks:
 volumes:
   mariadb:
     driver: local
+

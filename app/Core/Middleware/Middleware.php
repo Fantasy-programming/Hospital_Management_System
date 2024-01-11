@@ -9,9 +9,8 @@ class Middleware
         'guest' => Guest::class
     ];
 
-    public static function resolve($key)
+    public static function resolve($key): void
     {
-        
 
         if (!$key) {
             return;

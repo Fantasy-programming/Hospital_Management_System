@@ -7,7 +7,7 @@ use Core\Database;
 
 class Mutate extends \Core\Controller
 {
-    public function updateStaffAction()
+    public function updateStaffAction(): void
     {
         $db = App::resolve(Database::class);
         $spec = $_POST['specialisation'] ?? $this->defaultspec($_POST['role']);
@@ -27,8 +27,11 @@ class Mutate extends \Core\Controller
             echo json_encode(['message' => 'wrong request', 'statusCode' => 400]);
         }
     }
-
-    protected function updatepass($db)
+    /**
+     * @return void
+     * @param mixed $db
+     */
+    protected function updatepass($db): void
     {
         $query = "SELECT password FROM staff WHERE id = :id";
         $queryiedpassword = $db->query($query, ['id' => 6])->find();
@@ -57,8 +60,12 @@ class Mutate extends \Core\Controller
             ]);
         }
     }
-
-    protected function updateprofile($db, $spec)
+    /**
+     * @return void
+     * @param mixed $db
+     * @param mixed $spec
+     */
+    protected function updateprofile($db, $spec): void
     {
         $originalName = $_FILES['image']['name'];
         $newName = uniqid() . time() . "." . pathinfo($originalName, PATHINFO_EXTENSION);
@@ -80,8 +87,10 @@ class Mutate extends \Core\Controller
         http_response_code(200);
         echo json_encode(['message' => 'Profile updated successfully 😃', 'statusCode' => 200]);
     }
-
-    protected function defaultspec($role)
+    /**
+     * @param string $role
+     */
+    protected function defaultspec($role): string
     {
         switch ($role) {
             case 'Doctor':

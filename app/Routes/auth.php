@@ -5,7 +5,7 @@ $router->get('/login', 'auth\Login', 'showUserLogin')->only('guest');
 $router->post('/login', 'auth\Login', 'userLogin');
 
 $router->get('/signup', 'auth\Signup', 'showUserSignup')->only('guest');
-$router->post('/signup', 'auth\Signup', 'userStore');
+$router->post('/signup', 'auth\Signup', 'userSignup');
 
 $router->get('/users', 'auth\Fetch', 'fetchAllUsers');
 $router->get('/users/{purpose}/all', 'auth\Fetch', 'fetchFilterAllUsers');

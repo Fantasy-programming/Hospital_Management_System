@@ -1,4 +1,4 @@
-<?php require base_path('Views/partials/AH/auth.top.php') ?>
+<?php require base_path('Views/auth/components/auth.top.php') ?>
 
 <main class="container-fluid px-5 mb-5">
     <div class="row">
