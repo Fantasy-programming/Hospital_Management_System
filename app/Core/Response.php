@@ -4,12 +4,12 @@ namespace Core;
 
 class Response
 {
-    const NOT_FOUND = [
+    public const NOT_FOUND = [
         "code" => 404,
-        "message" => "Page Not Found"
+        "message" => "Page Not Found",
     ];
-    const FORBIDDEN = [
+    public const FORBIDDEN = [
         "code" => 403,
-        "message" => "Forbidden"
+        "message" => "Forbidden",
     ];
 }

@@ -27,6 +27,12 @@ a {
   color: #272727; /* extract this */
 }
 
+nav a {
+  color: #fff;
+  text-decoration: none;
+  cursor: pointer;
+}
+
 .Title-bottom {
   bottom: 10rem;
 }

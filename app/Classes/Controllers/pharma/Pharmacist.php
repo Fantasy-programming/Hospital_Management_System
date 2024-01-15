@@ -34,7 +34,7 @@ class Pharmacist extends \Core\Controller
 
     public function viewPrescriptionAction($params)
     {
-        $med = (new PharmaModel)->handle('showPrescription', $params);
+        $med = (new PharmaModel())->handle('showPrescription', $params);
         $this->renderView('pharmacist\prescription.view', $med);
     }
 

@@ -46,7 +46,7 @@ class PatientModel extends \Core\Models
                 'weight' => $_POST['weight'],
                 'height' => $_POST['height'],
                 'sugar' => $_POST['sugar'],
-                'id' => $_SESSION['patient_id']
+                'id' => $_SESSION['patient_id'],
             ]);
             return ['message' => 'Vitals updated successfully', 'statusCode' => 200];
         }
@@ -58,7 +58,7 @@ class PatientModel extends \Core\Models
             'bp' => $_POST['bloodPressure'],
             'weight' => $_POST['weight'],
             'height' => $_POST['height'],
-            'sugar' => $_POST['sugar']
+            'sugar' => $_POST['sugar'],
         ]);
         return ['message' => 'Vitals created successfully', 'statusCode' => 200];
     }
@@ -70,7 +70,7 @@ class PatientModel extends \Core\Models
         $result = $this->db->query($query, [
             'patient_id' => $_SESSION['patient_id'],
             'event' => "Operation",
-            'report' => $_POST['operationLog']
+            'report' => $_POST['operationLog'],
         ]);
     }
 

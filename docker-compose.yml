@@ -4,7 +4,7 @@ services:
   nginx:
     build:
       context: .
-      dockerfile: nginx/Dockerfile
+      dockerfile: docker/nginx/Dockerfile
     expose:
       - 40001
     ports:
@@ -18,7 +18,7 @@ services:
   php:
     build:
       context: .
-      dockerfile: php/Dockerfile
+      dockerfile: docker/php/Dockerfile
     networks:
       - internal
     volumes:
@@ -35,7 +35,7 @@ services:
       - internal
     volumes:
       - mariadb:/var/lib/mysql
-      - ./mysql/medicaldb.sql:/docker-entrypoint-initdb.d/medicaldb.sql
+      - ./docker/mysql/medicaldb.sql:/docker-entrypoint-initdb.d/medicaldb.sql
     environment:
       MYSQL_ROOT_PASSWORD: root
       MYSQL_USER: user
@@ -67,4 +67,3 @@ networks:
 volumes:
   mariadb:
     driver: local
-

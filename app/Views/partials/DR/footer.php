@@ -1,4 +1,0 @@
-<!-- JS Libraies -->
-</body>
-
-</html>

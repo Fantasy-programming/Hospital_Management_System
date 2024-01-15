@@ -7,7 +7,6 @@ use Core\Database;
 
 class Categories extends \Classes\Controllers\pharma\Pharmacist
 {
-
     public function fetchAction()
     {
 
@@ -41,7 +40,7 @@ class Categories extends \Classes\Controllers\pharma\Pharmacist
         $query = "UPDATE medicinescategory SET category = :category Where id = :id";
         $db->query($query, [
             'category' => $_POST['new_name'],
-            'id' => $_POST['old_name']
+            'id' => $_POST['old_name'],
         ]);
         http_response_code(200);
         echo json_encode(['message' => 'Category updated successfully 😃', 'statusCode' => 200]);
@@ -56,14 +55,14 @@ class Categories extends \Classes\Controllers\pharma\Pharmacist
         $query = "Delete from  medicinescategory Where id = :id";
 
         $categories = $db->query($query, [
-            'id' => $_GET['id']
+            'id' => $_GET['id'],
         ]);
 
         header('Content-Type: application/json');
         http_response_code(200);
         echo json_encode([
             'statusCode' => 200,
-            'message' => 'Category deleted successfully'
+            'message' => 'Category deleted successfully',
         ]);
     }
 }

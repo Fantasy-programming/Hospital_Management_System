@@ -20,7 +20,7 @@ class Mutate extends \Core\Controller
 
         if ($_POST['_purpose'] === 'changepass') {
             $this->updatepass($db);
-        } else if ($_POST['_purpose'] === 'updateprofile') {
+        } elseif ($_POST['_purpose'] === 'updateprofile') {
             $this->updateprofile($db, $spec);
         } else {
             http_response_code(400);
@@ -49,14 +49,14 @@ class Mutate extends \Core\Controller
                 http_response_code(400);
                 echo json_encode([
                     'message' => 'wrong password',
-                    'statusCode' => 400
+                    'statusCode' => 400,
                 ]);
             }
         } else {
             http_response_code(400);
             echo json_encode([
                 'message' => 'user has no password',
-                'statusCode' => 400
+                'statusCode' => 400,
             ]);
         }
     }
@@ -82,7 +82,7 @@ class Mutate extends \Core\Controller
             'country' => $_POST['country'],
             'city' => $_POST['city'],
             'spec' => $spec,
-            'id' => 6
+            'id' => 6,
         ]);
         http_response_code(200);
         echo json_encode(['message' => 'Profile updated successfully 😃', 'statusCode' => 200]);

@@ -1,5 +1,5 @@
 <?php require base_path('Views/auth/components/auth.top.php') ?>
-<main class="container-fluid px-5">
+<main class="container-fluid px-3 px-md-5">
   <div class="row justify-content-center">
     <div class="col-md-4 mt-4">
       <div class="card p-3 rounded-0">

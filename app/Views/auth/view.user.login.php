@@ -1,6 +1,6 @@
 <?php require base_path('Views/auth/components/auth.top.php') ?>
 
-<main class="container-fluid px-5">
+<main class="container-fluid px-3 px-md-5">
   <div class="row">
     <div class="col-md-8 mt-auto d-none d-md-block">
       <h1 class="mb-3">Welcome to Turing Hospital</h1>

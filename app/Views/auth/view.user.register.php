@@ -1,6 +1,6 @@
 <?php require base_path('Views/auth/components/auth.top.php') ?>
 
-<main class="container-fluid px-5 mb-5">
+<main class="container-fluid px-3 px-md-5 mb-5">
     <div class="row">
         <div class="signup-1 col-md-8 mt-auto mb-5">
             <h1 class="mb-3 position-fixed Title-bottom d-none d-md-block w-25 ms-5">Create an account</h1>

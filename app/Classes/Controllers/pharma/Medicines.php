@@ -34,7 +34,7 @@ class Medicines extends \Classes\Controllers\pharma\Pharmacist
         WHERE m.med_id = :id;
         ';
         $medications = $db->query($query, [
-            'id' => $_GET['id']
+            'id' => $_GET['id'],
         ])->find();
 
         header('Content-Type: application/json');
@@ -69,7 +69,7 @@ class Medicines extends \Classes\Controllers\pharma\Pharmacist
             'category' => $_POST['category'],
             'type' => $_POST['type'],
             'ammount' => $_POST['ammountInStock'],
-            'id' => $_POST['id']
+            'id' => $_POST['id'],
         ]);
         http_response_code(200);
         echo json_encode(['message' => 'Medicine updated successfully 😃', 'statusCode' => 200]);
@@ -84,14 +84,14 @@ class Medicines extends \Classes\Controllers\pharma\Pharmacist
         $query = "Delete from medications Where med_id = :id";
 
         $medications = $db->query($query, [
-            'id' => $_GET['id']
+            'id' => $_GET['id'],
         ]);
 
         header('Content-Type: application/json');
         http_response_code(200);
         echo json_encode([
             'statusCode' => 200,
-            'message' => 'Medication deleted successfully'
+            'message' => 'Medication deleted successfully',
         ]);
     }
 }

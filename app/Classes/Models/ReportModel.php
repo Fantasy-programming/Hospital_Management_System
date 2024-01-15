@@ -20,7 +20,7 @@ class ReportModel extends \Core\Models
         $query = 'select * from user_lab_tests where testID = :id';
         $id = $params['id'];
         $result = $this->db->query($query, [
-            'id' => $id
+            'id' => $id,
         ])->find();
 
         if ($result) {

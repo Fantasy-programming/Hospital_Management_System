@@ -47,7 +47,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
     if (this.props.zIndex) {
       console.warn(
-        "bootstrap-show-toast: The zIndex property is deprecated, use the bootstrap variables instead."
+        "bootstrap-show-toast: The zIndex property is deprecated, use the bootstrap variables instead.",
       );
     }
     const cssClass = ("toast " + this.props.toastClass).trim();
@@ -89,7 +89,7 @@ document.addEventListener("DOMContentLoaded", function () {
       this.container.id = this.containerId;
       this.container.setAttribute(
         "class",
-        "toast-container position-fixed p-3 " + this.props.position
+        "toast-container position-fixed p-3 " + this.props.position,
       );
       this.container.style.zIndex = "" + this.props.zIndex;
       document.body.appendChild(this.container);

@@ -4,12 +4,12 @@ namespace Core\Middleware;
 
 class Middleware
 {
-    const MAP = [
+    public const MAP = [
         'auth' => Auth::class,
-        'guest' => Guest::class
+        'guest' => Guest::class,
     ];
 
-    public static function resolve($key): void
+    public static function resolve(string | null $key): void
     {
 
         if (!$key) {
@@ -21,6 +21,7 @@ class Middleware
         if (!$middleware) {
             throw new \Exception("Middleware '{$key}' not found.");
         }
-        (new $middleware)->handle();
+
+        (new $middleware())->handle();
     }
 }

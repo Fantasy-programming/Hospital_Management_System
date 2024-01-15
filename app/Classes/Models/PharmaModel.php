@@ -20,7 +20,7 @@ class PharmaModel extends \Core\Models
         $query = 'SELECT * FROM prescription_data WHERE prescription_id = :id';
         $id = $params['id'];
         $result = $this->db->query($query, [
-            'id' => $id
+            'id' => $id,
         ])->findAll();
 
         if ($result) {

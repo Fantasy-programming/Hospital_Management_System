@@ -40,6 +40,7 @@ class App
 
     public static function resolve(string $key): mixed
     {
+
         return static::container()->resolve($key);
     }
 }

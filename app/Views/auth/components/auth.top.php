@@ -1,5 +1,5 @@
 <?php
-$error = isset($_GET['error']) ? $_GET['error'] : null;
+$error = $_GET['error'] ?? null;
 ?>
 
 <!DOCTYPE html>
@@ -16,9 +16,9 @@ $error = isset($_GET['error']) ? $_GET['error'] : null;
 <body class="<?= $bg ?>">
     <div class="container-fluid">
         <nav class="row px-4 py-4">
-            <div class="col">
+            <a class="col" href="/">
                 <h2>Turing</h2>
                 <h2>Hospital</h2>
-            </div>
+            </a>
         </nav>
     </div>

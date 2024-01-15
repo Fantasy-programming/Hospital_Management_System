@@ -13,7 +13,7 @@ class Controller
     {
         extract($params);
         require base_path("Views/{$path}.php");
-  }
+    }
 
     /**
      * @return void
@@ -23,6 +23,7 @@ class Controller
     public function handle(string $action, array $params = []): void
     {
         $methodName = $action . 'Action';
+
 
         if (method_exists($this, $methodName)) {
             $this->$methodName($params);
@@ -38,7 +39,6 @@ class Controller
 
     public function notFoundAction(): void
     {
-        http_response_code(404);
         $this->abort();
         exit();
     }

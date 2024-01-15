@@ -2,7 +2,7 @@
 
 namespace Classes\Controllers;
 
-class home extends \Core\Controller
+class Home extends \Core\Controller
 {
     public function showAction()
     {

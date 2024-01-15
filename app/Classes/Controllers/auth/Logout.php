@@ -4,16 +4,13 @@ namespace Classes\Controllers\auth;
 
 class Logout extends \Core\Controller
 {
-
-    public function logoutAction()
+    public function logoutAction(): void
     {
-        // Start the session
-        session_start();
 
         // Unset all session variables
-        $_SESSION = array();
+        $_SESSION = [];
 
-        // Destroy the session 
+        // Destroy the session
         session_destroy();
 
         $params = session_get_cookie_params();

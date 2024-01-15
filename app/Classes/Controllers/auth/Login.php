@@ -8,7 +8,6 @@ use Core\Database;
 
 class Login extends \Core\Controller
 {
-
     public function showUserLoginAction(): void
     {
         $this->renderView('auth/view.user.login', ['title' => 'Login', 'bg' => 'bd-users']);
@@ -19,14 +18,14 @@ class Login extends \Core\Controller
         $this->renderView('auth/view.admin.login', ['title' => 'Admin login', 'bg' => 'bd-admin']);
     }
 
-    public function showStaffLoginAction()
+    public function showStaffLoginAction(): void
     {
         $this->renderView('auth/view.staff.login', ['title' => 'Staff login', 'bg' => 'bd-staff']);
     }
 
 
 
-    public function userLoginAction()
+    public function userLoginAction(): void
     {
 
         $db = App::resolve(Database::class);
@@ -36,7 +35,7 @@ class Login extends \Core\Controller
             $this->renderView('auth/view.user.login', [
                 'title' => 'Login',
                 'bg' => 'bd-users',
-                'errors' => $form->getErrors()
+                'errors' => $form->getErrors(),
             ]);
             return;
         }
@@ -44,10 +43,10 @@ class Login extends \Core\Controller
         // TODO: Extract this to a model
         $query = "SELECT id, email, first_name, last_name, password, role FROM patients WHERE email = :mail LIMIT 1";
         $user = $db->query($query, [
-            'mail' => $_POST['email']
+            'mail' => $_POST['email'],
         ])->find();
 
-        if (!$user) { 
+        if (!$user) {
             header("Location: /login?error=usernotfound");
             exit();
         }
@@ -56,7 +55,7 @@ class Login extends \Core\Controller
             $_SESSION['user_id'] = $user['id'];
             $_SESSION['role'] = $user['role'];
             session_regenerate_id();
-            
+
             // Send to dashboard
             header("Location: /patient/dashboard");
             exit();
@@ -64,7 +63,7 @@ class Login extends \Core\Controller
 
         header("Location: /login?error=incorrectpassword");
         exit();
-       
+
     }
 
     public function adminLoginAction()
@@ -75,7 +74,7 @@ class Login extends \Core\Controller
         $query = "SELECT id, username, password, role FROM staff WHERE username = :username AND role = :role LIMIT 1";
         $params = [
             'username' => $_POST['userName'],
-            'role' => $_POST['role']
+            'role' => $_POST['role'],
         ];
 
         $user = $db->query($query, $params)->find();
@@ -110,7 +109,7 @@ class Login extends \Core\Controller
         $query = "SELECT id, username, password, role FROM staff WHERE username = :user AND role = :role LIMIT 1";
         $params = [
             'user' => $_POST['userName'],
-            'role' => $_POST['role']
+            'role' => $_POST['role'],
         ];
 
         $user = $db->query($query, $params)->findorfail();

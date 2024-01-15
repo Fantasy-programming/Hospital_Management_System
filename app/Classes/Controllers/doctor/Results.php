@@ -34,7 +34,7 @@ class Results extends \Classes\Controllers\doctor\Doctor
         $columnName = $_POST['columns'][$columnIndex]['data']; // Column name
         $columnSortOrder = $_POST['order'][0]['dir']; // asc or desc
         $searchValue = mysqli_real_escape_string($con, $_POST['search']['value']); // Search value
-        ## Search 
+        ## Search
         $searchQuery = " ";
         if ($searchValue != '') {
             $searchQuery = " and (first_name like '%" . $searchValue . "%' or 
@@ -54,25 +54,25 @@ class Results extends \Classes\Controllers\doctor\Doctor
         ## Fetch records
         $empQuery = "select * from patients WHERE 1 " . $searchQuery . " order by " . $columnName . " " . $columnSortOrder . " limit " . $row . "," . $rowperpage;
         $empRecords = mysqli_query($con, $empQuery);
-        $data = array();
+        $data = [];
 
         while ($row = mysqli_fetch_assoc($empRecords)) {
-            $data[] = array(
+            $data[] = [
                 "first_name" => $row['first_name'],
                 "last_name" => $row['last_name'],
                 "email" => $row['email'],
                 "age" => $row['age'],
-                "role" => $row['role']
-            );
+                "role" => $row['role'],
+            ];
         }
 
         ## Response
-        $response = array(
+        $response = [
             "draw" => intval($draw),
             "iTotalRecords" => $totalRecords,
             "iTotalDisplayRecords" => $totalRecordwithFilter,
-            "aaData" => $data
-        );
+            "aaData" => $data,
+        ];
 
         echo json_encode($response);
     }

@@ -40,7 +40,7 @@ class Requests extends \Core\Controller
 ';
 
         $medications = $db->query($query, [
-            ':id' => 8
+            ':id' => 8,
         ])->findAll();
 
         header('Content-Type: application/json');
@@ -73,7 +73,7 @@ class Requests extends \Core\Controller
 
         $medications = $db->query($query, [
             'status' => $req,
-            'body' => $params['body']
+            'body' => $params['body'],
         ])->findAll();
 
         header('Content-Type: application/json');
@@ -113,7 +113,7 @@ class Requests extends \Core\Controller
         if ($_POST["For"] === "operation") {
             $result = (new RequestsModel())->handle('storeOperation');
             showAndClose(['data' => $result, 'statusCode' => 200], 200);
-        } else if ($_POST["For"] === "Test") {
+        } elseif ($_POST["For"] === "Test") {
             $result = (new RequestsModel())->handle('storeLab');
             showAndClose(['data' => $result, 'statusCode' => 200], 200);
         } else {

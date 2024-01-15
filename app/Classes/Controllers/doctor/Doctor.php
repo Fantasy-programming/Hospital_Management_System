@@ -4,22 +4,21 @@ namespace Classes\Controllers\doctor;
 
 use Classes\Models\PatientModel;
 
-
 class Doctor extends \Core\Controller
 {
     public function viewHomeAction(): void
     {
-        $this->renderView('doctor\dashboard.view');
+        $this->renderView('doctor/dashboard.view');
     }
 
     public function viewAppointmentsAction(): void
     {
-        $this->renderView('doctor\appointments.view');
+        $this->renderView('doctor/appointments.view');
     }
 
     public function viewPatientsAction(): void
     {
-        $this->renderView('doctor\patients.view');
+        $this->renderView('doctor/patients.view');
     }
     /**
      * @return void

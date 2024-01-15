@@ -90,7 +90,7 @@ class Appointment extends \Classes\Controllers\doctor\Doctor
                     ':purpose' => 'Appointment',
                     ':start' => $start,
                     ':end' => $end,
-                    ':status' => 'Pending'
+                    ':status' => 'Pending',
                 ];
 
                 $db->query($query, $params);
@@ -120,7 +120,7 @@ class Appointment extends \Classes\Controllers\doctor\Doctor
             'title' => $data->title,
             'description' => $data->description,
             'status' => $data->status,
-            'allDay' => False
+            'allDay' => false,
         ];
 
         $query = "UPDATE appointments SET start=:start, end=:end, title=:title, description=:description, status=:status, allDay=:allDay WHERE ID = :id";

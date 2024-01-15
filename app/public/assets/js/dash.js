@@ -58,7 +58,7 @@ function updateDateTime() {
   const dateOptions = { day: "numeric", month: "long" };
   const formattedDate = currentDateTime.toLocaleDateString(
     "en-US",
-    dateOptions
+    dateOptions,
   );
   const dateContainer = document.getElementById("date-container");
   dateContainer.textContent = `Today, ${formattedDate}`;
@@ -66,7 +66,7 @@ function updateDateTime() {
   const timeOptions = { hour: "2-digit", minute: "2-digit", hour12: true };
   const formattedTime = currentDateTime.toLocaleTimeString(
     "en-US",
-    timeOptions
+    timeOptions,
   );
   const timeContainer = document.getElementById("time-container");
   timeContainer.textContent = formattedTime;
@@ -120,14 +120,14 @@ async function fetchRequests(ncontainer, ncount) {
           <div> <strong>${
             request.service_name
           }</strong> <span class="small text-muted">#${
-      request.request_id
-    }</span> </div> <small class="text-muted">${timeElapsed(
-      request.request_date
-    )}</small>
+            request.request_id
+          }</span> </div> <small class="text-muted">${timeElapsed(
+            request.request_date,
+          )}</small>
         </div>
         <div class="text-truncate"> ${request.Description} patient ${
-      request.requestee_name
-    } </div>
+          request.requestee_name
+        } </div>
       </div>
     </a>
     `;

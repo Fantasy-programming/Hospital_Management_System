@@ -36,6 +36,10 @@ a {
   color: #ffff;
 }
 
+.nav-link {
+  color: #ffff !important;
+}
+
 /* Testinmonials */
 
 .testimonials li {
@@ -223,5 +227,9 @@ footer hr {
 
   .centerText a {
     margin: 1rem 2rem !important;
+  }
+
+  .small-full {
+    width: 100%;
   }
 }

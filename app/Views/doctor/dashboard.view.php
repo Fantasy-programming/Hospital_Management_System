@@ -1,6 +1,8 @@
-<?php require base_path('Views/partials/DR/head.php') ?>
-<?php require base_path('Views/partials/DR/header.php') ?>
-<?php require base_path('Views/partials/DR/nav.php') ?>
+<?php require base_path('Views/doctor/components/head.php') ?>
+<?php require base_path('Views/doctor/components/header.php') ?>
+<?php require base_path('Views/doctor/components/nav.php') ?>
+
+
 
 <!--Container Main start-->
 <main class="height-100 bg-lig">
@@ -164,5 +166,6 @@
 </main>
 <!--Container Main end-->
 
+</body>
+</html>
 
-<?php require base_path('Views/partials/DR/footer.php') ?>

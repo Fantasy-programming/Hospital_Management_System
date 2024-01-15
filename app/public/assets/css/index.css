@@ -13,29 +13,30 @@
 @font-face {
   font-family: "RodinBokutohPro-B";
   src:
+    local('RodinBokutohPro-B'),
+    local('RodinBokutohPro B'),
     url("../fonts/RodinBokutohPro-B.ttf.woff") format("woff"),
-    url("../fonts/RodinBokutohPro-B.ttf.svg#RodinBokutohPro-B") format("svg"),
-    url("../fonts/RodinBokutohPro-B.ttf.eot"),
-    url("../fonts/RodinBokutohPro-B.ttf.eot?#iefix") format("embedded-opentype");
   font-weight: normal;
   font-style: normal;
+    font-display: swap;
 }
 
 @font-face {
   font-family: "RodinBokutohPro-DB";
   src:
+    local('RodinBokutohPro-DB'),
+    local('RodinBokutohPro DB'),
     url("../fonts/RodinBokutohPro-DB.ttf.woff") format("woff"),
-    url("../fonts/RodinBokutohPro-DB.ttf.svg#RodinBokutohPro-DB") format("svg"),
-    url("../fonts/RodinBokutohPro-DB.ttf.eot"),
-    url("../fonts/RodinBokutohPro-DB.ttf.eot?#iefix")
-      format("embedded-opentype");
   font-weight: normal;
   font-style: normal;
+      font-display: swap;
 }
 
 @font-face {
   font-family: "Neue Machina";
   src:
+    local('Neue Machina'),
+    local('NeueMachina'),
     url("../fonts/NeueMachina-Light.woff2") format("woff2"),
     url("../fonts/NeueMachina-Light.woff") format("woff");
   font-weight: 300;
@@ -46,6 +47,8 @@
 @font-face {
   font-family: "Neue Machina";
   src:
+    local('Neue Machina'),
+    local('NeueMachina'),
     url("../fonts/NeueMachina-Ultrabold.woff2") format("woff2"),
     url("../fonts/NeueMachina-Ultrabold.woff") format("woff");
   font-weight: bold;
@@ -56,6 +59,8 @@
 @font-face {
   font-family: "Neue Machina";
   src:
+    local('Neue Machina'),
+    local('NeueMachina'),
     url("../fonts/NeueMachina-Regular.woff2") format("woff2"),
     url("../fonts/NeueMachina-Regular.woff") format("woff");
   font-weight: normal;
@@ -66,6 +71,8 @@
 @font-face {
   font-family: "HelveticaNeue";
   src:
+    local('Helvetica Neue'),
+    local('HelveticaNeue'),
     url("../fonts/HelveticaNeueBold.woff2") format("woff2"),
     url("../fonts/HelveticaNeueBold.woff") format("woff");
   font-weight: bold;
@@ -76,6 +83,8 @@
 @font-face {
   font-family: "HelveticaNeue";
   src:
+    local('Helvetica Neue'),
+    local('HelveticaNeue'),
     url("../fonts/HelveticaNeueMedium.woff2") format("woff2"),
     url("../fonts/HelveticaNeueMedium.woff") format("woff");
   font-weight: 500;
@@ -86,6 +95,8 @@
 @font-face {
   font-family: "HelveticaNeue";
   src:
+    local('Helvetica Neue'),
+    local('HelveticaNeue'),
     url("../fonts/HelveticaNeueBlackCond.woff2") format("woff2"),
     url("../fonts/HelveticaNeueBlackCond.woff") format("woff");
   font-weight: 900;
@@ -96,6 +107,8 @@
 @font-face {
   font-family: "HelveticaNeue";
   src:
+    local('Helvetica Neue'),
+    local('HelveticaNeue'),
     url("../fonts/HelveticaNeueThin.woff2") format("woff2"),
     url("../fonts/HelveticaNeueThin.woff") format("woff");
   font-weight: 100;
@@ -106,6 +119,8 @@
 @font-face {
   font-family: "HelveticaNeue";
   src:
+    local('Helvetica Neue'),
+    local('HelveticaNeue'),
     url("../fonts/HelveticaNeueLight.woff2") format("woff2"),
     url("../fonts/HelveticaNeueLight.woff") format("woff");
   font-weight: 300;
@@ -116,12 +131,10 @@
 @font-face {
   font-family: "Mark for Ebiquity W05 Bold";
   src:
-    url("../fonts/Mark\ for\ Ebiquity\ W05\ Bold.svg") format("svg"),
-    url("../fonts/Mark\ for\ Ebiquity\ W05\ Bold.ttf") format("truetype"),
+    local('Mark for Ebiquity W05 Bold'),
+    local('MarkforEbiquityW05-Bold'),
     url("../fonts/Mark\ for\ Ebiquity\ W05\ Bold.woff") format("woff"),
     url("../fonts/Mark\ for\ Ebiquity\ W05\ Bold.woff2") format("woff2"),
-    url("../fonts/Mark\ for\ Ebiquity\ W05\ Bold.eot")
-      format("embedded-opentype");
   font-weight: normal;
   font-style: normal;
   font-display: swap;

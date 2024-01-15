@@ -4,7 +4,6 @@ namespace Classes\Models;
 
 class SpaceModel extends \Core\Models
 {
-
     public function handle($action, $params = [])
     {
         $methodName = $action . 'Event';
@@ -32,9 +31,7 @@ class SpaceModel extends \Core\Models
         return [];
     }
 
-    protected function fetchwardEvent($params = [])
-    {
-    }
+    protected function fetchwardEvent($params = []) {}
 
     protected function updateroomEvent($params = [])
     {
@@ -47,23 +44,13 @@ class SpaceModel extends \Core\Models
         return ['data' => 'Internal Server Error', 'statusCode' => 500];
     }
 
-    protected function updatewardEvent($params = [])
-    {
-    }
+    protected function updatewardEvent($params = []) {}
 
-    protected function storeroomEvent($params = [])
-    {
-    }
+    protected function storeroomEvent($params = []) {}
 
-    protected function storewardEvent($params = [])
-    {
-    }
+    protected function storewardEvent($params = []) {}
 
-    protected function destroyroomEvent($params = [])
-    {
-    }
+    protected function destroyroomEvent($params = []) {}
 
-    protected function destroywardEvent($params = [])
-    {
-    }
+    protected function destroywardEvent($params = []) {}
 }

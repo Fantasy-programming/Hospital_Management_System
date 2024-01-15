@@ -1,6 +1,5 @@
 <?php
 
-
 namespace Core;
 
 class Container
@@ -30,6 +29,7 @@ class Container
         }
 
         if (array_key_exists($key, $this->bindings)) {
+
             return call_user_func($this->bindings[$key]);
         }
     }

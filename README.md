@@ -6,8 +6,9 @@
   - [Images](#images)
   - [How to run it](#how-to-run-it)
     - [Method 1 (Docker)](#method-1-docker)
-    - [Method 2 (Your choice)](#method-2-your-choice)
-  - [Stack 🎉](#stack-🎉)
+    - [Method 2 (Vercel)](#method-2-docker)
+    - [Method 3 (Your choice)](#method-3-your-choice)
+  - [Stack 🎉](#stack-🎉]
   <!--toc:end-->
 
 This is an hospital management system written in php. It comprises 7 moludes:

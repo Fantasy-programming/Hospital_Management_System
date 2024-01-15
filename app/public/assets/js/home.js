@@ -1,78 +1,46 @@
-// import { Isolde } from "../modules/isolde/dist/isolde.min.js";
-
 const navLinks = document.querySelectorAll(".nvlink");
+const panels = document.querySelectorAll(".panel");
+const buttons = document.querySelectorAll("#services button, #faq button");
 
-navLinks.forEach((link) => {
+// setup navlinks
+
+for (const link of navLinks) {
   link.addEventListener("click", (event) => {
-    navLinks.forEach((link) => {
+    for (const link of navLinks) {
       link.classList.remove(
         "btn",
         "color-second",
         "text-white",
         "px-3",
-        "rounded-pill"
+        "rounded-pill",
       );
-    });
+    }
     event.currentTarget.classList.add(
       "btn",
       "color-second",
       "text-white",
       "px-3",
-      "rounded-pill"
+      "rounded-pill",
     );
   });
-});
+}
 
-const panels = document.querySelectorAll(".panel");
-panels.forEach((panel) => {
+// Setup pannel
+
+for (const panel of panels) {
   panel.addEventListener("click", () => {
     removeActiveClasses();
     panel.classList.add("active");
   });
-});
-function removeActiveClasses() {
-  panels.forEach((panel) => {
-    panel.classList.remove("active");
-  });
 }
 
-const sections = document.querySelectorAll("header, section");
-window.onscroll = () => {
-  var current = "";
+function removeActiveClasses() {
+  for (const panel of panels) {
+    panel.classList.remove("active");
+  }
+}
 
-  sections.forEach((section) => {
-    const sectionTop = section.offsetTop;
-    if (scrollY >= sectionTop - 60) {
-      current = section.getAttribute("id");
-    }
-  });
-
-  navLi.forEach((li) => {
-    link.classList.remove(
-      "btn",
-      "color-second",
-      "text-white",
-      "px-3",
-      "rounded-pill"
-    );
-    if (li.classList.contains(current)) {
-      li.classList.add(
-        "btn",
-        "color-second",
-        "text-white",
-        "px-3",
-        "rounded-pill"
-      );
-    }
-  });
-};
-
-// Filtered tables
-
-// const grid = new Isolde();
-
-const buttons = document.querySelectorAll("#services button, #faq button");
-buttons.forEach((button) => {
+for (const button of buttons) {
   button.addEventListener("click", () => {
     const pTag = button.previousElementSibling;
     const lastElement = pTag.lastElementChild;
@@ -83,12 +51,41 @@ buttons.forEach((button) => {
     const svg = button.querySelector("svg");
     svg.classList.toggle("rotate");
     button.classList.toggle("color-second");
-    if (lastElement.classList.contains("d-inline-block")) {
-      lastElement.style.transition = "opacity 0.5s ease-in";
-      lastElement.style.opacity = "1";
-    } else {
-      lastElement.style.transition = "opacity 0.5s ease-out";
-      lastElement.style.opacity = "0";
-    }
+
+    // Set initial opacity value in CSS
+    lastElement.style.opacity = "0";
+
+    setTimeout(() => {
+      if (lastElement.classList.contains("d-inline-block")) {
+        lastElement.style.transition = "opacity 0.5s ease-in";
+        lastElement.style.opacity = "1";
+      } else {
+        lastElement.style.transition = "opacity 0.5s ease-out";
+        lastElement.style.opacity = "0";
+      }
+    }, 0);
   });
-});
+}
+
+// Sticky Navbar (future)
+
+// const sections = document.querySelectorAll("header, section");
+// window.onscroll = () => {
+//   let current = null;
+//   let previousSection = null;
+//
+//   sections.forEach((section) => {
+//     const sectionTop = section.offsetTop;
+//     if (scrollY >= sectionTop - 60) {
+//       current = section.getAttribute("id");
+//     }
+//   });
+//
+//   // Check if the current section has changed
+//   if (current !== null && current !== previousSection) {
+//     console.log(current);
+//     previousSection = current;
+//   }
+// };
+
+// Filtered tables

@@ -7,8 +7,6 @@ use PDOException;
 use Exception;
 use PDOStatement;
 
-// TODO: ADD SSL SUPPORT
-
 class Database
 {
     public PDO $connection;
@@ -20,24 +18,30 @@ class Database
 
     public function __construct(private $config)
     {
-    try {
+        try {
+            $dsn = "mysql:host=" . $config['host'];
 
-if ($config['port'] == null) {
-        $dsn = "mysql:host=" . $config['host'] .  ";dbname=" . $config['dbname'];
-      } else {
-        $dsn = "mysql:host=" . $config['host'] . ";port=" . $config['port'] . ";dbname=" . $config['dbname'];
+            if ($config['port'] != null) {
+                $dsn .= ";port=" . $config['port'];
+            }
 
-      }
+            $dsn .= ";dbname=" . $config['dbname'];
 
+            $pdoOptions = [
+                PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,
+            ];
 
-        $this->connection = new PDO($dsn, $config["username"], $config["password"], [
-        PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,
- PDO::MYSQL_ATTR_SSL_CA => $config["ssl"],
-            ]);
+            if ($config['port'] == null) {
+                $pdoOptions[PDO::MYSQL_ATTR_SSL_CA] = $config["ssl"];
+            }
+
+            $this->connection = new PDO($dsn, $config["username"], $config["password"], $pdoOptions);
+
         } catch (PDOException $e) {
             throw new Exception("Database connection failed: " . $e->getMessage());
         }
-  }
+    }
+
     /**
      * @return Database|int
      * @param mixed $query
@@ -51,32 +55,36 @@ if ($config['port'] == null) {
             $this->statement = $this->connection->prepare($query);
             $this->statement->execute($params);
             return $this;
+
         } catch (PDOException $e) {
             return 0;
         }
     }
+
     /**
+     * Insert a new row into the database and return the id
      * @return string|bool|int
      * @param array<int,mixed> $params
-     */
+    */
+
     public function insertAndGetId(string $query, array $params = []): string|bool|int
     {
         try {
 
             $this->statement = $this->connection->prepare($query);
             $this->statement->execute($params);
+            return $this->connection->lastInsertId();
 
-            // After executing the INSERT query, get the last inserted ID
-
-            $lastInsertId = $this->connection->lastInsertId();
-            return $lastInsertId;
         } catch (PDOException $e) {
             return 0;
         }
     }
+
     /**
+     *  TODO: Remove this maybe
      * @return mixed
-     */
+    */
+
     public function findorabort()
     {
         $result = $this->find();
@@ -85,23 +93,30 @@ if ($config['port'] == null) {
         }
         return $result;
     }
+
     /**
-     * @return int*/
-    public function findorfail(): int
+     * @return int
+    */
+
+    public function findorfail(): mixed
     {
         $result = $this->find();
         return $result ? $result : 0;
     }
+
     /**
      * @return array|bool
-     */
+    */
+
     public function findAll(): array|bool
     {
         return $this->statement->fetchAll();
     }
+
     /**
      * @return mixed
-     */
+    */
+
     public function find()
     {
         return $this->statement->fetch();

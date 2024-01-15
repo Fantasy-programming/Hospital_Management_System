@@ -1,6 +1,7 @@
 <?php
 
 namespace Controllers\accountant;
+
 class Accountant extends \Core\Controller
 {
     public function viewHomeAction(): void
